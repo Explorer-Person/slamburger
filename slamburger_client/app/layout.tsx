@@ -23,7 +23,7 @@ export default function RootLayout({
       </head>
       <body className="bg-[--background] text-[--foreground] font-[var(--font-body)]">
         <Header />
-        <main>{children}</main>
+        <main className="relative w-screen overflow-x-hidden bg-[--background]">{children}</main>
         <Footer />
       </body>
     </html>
@@ -32,19 +32,21 @@ export default function RootLayout({
 
 function Header() {
   return (
-    <header className="flex items-center justify-between px-10 py-6 md:py-8 bg-[--background] shadow-md gap-x-8">
+    <header className="flex flex-col md:flex-row items-center justify-between px-4 md:px-10 py-4 md:py-8 bg-[--background] shadow-md gap-y-4 md:gap-y-0 md:gap-x-8 text-center md:text-left">
       <Link href="/" aria-label="Go to homepage">
-        <h1 className="text-3xl cursor-pointer md:text-4xl font-[Anton] text-[--foreground] tracking-wide mx-20">
+        <h1 className="text-2xl md:text-4xl font-[Anton] text-[--foreground] tracking-wide cursor-pointer">
           SLAMBURGER
         </h1>
       </Link>
-      <nav className="flex space-x-6 text-base md:text-lg font-semibold uppercase mx-20">
+
+      <nav className="flex flex-col md:flex-row gap-y-2 md:gap-y-0 md:space-x-6 text-base md:text-lg font-semibold uppercase">
         <a href="/menu" className="hover:text-[--accent]">Menu</a>
         <a href="/about_us" className="hover:text-[--accent]">About Us</a>
         <a href="/gallery" className="hover:text-[--accent]">Gallery</a>
         <a href="/contact" className="hover:text-[--accent]">Contact</a>
       </nav>
     </header>
+
   );
 }
 

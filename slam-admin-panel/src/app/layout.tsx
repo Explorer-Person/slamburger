@@ -44,16 +44,18 @@ export default function RootLayout({
 
 function AdminHeader() {
   return (
-    <header className="flex items-center justify-between px-6 py-2 bg-white border-b border-gray-200">
+    <header className="flex flex-wrap items-center justify-between px-4 sm:px-6 py-2 bg-white border-b border-gray-200">
+      {/* Logo */}
       <div className="flex items-center gap-2">
-        <a href={`/`}>
+        <Link href="/">
           <span className="text-2xl">
-            <img className="w-36 h-24" src="/burger-icon-transparent.png" alt="" />
+            <img className="w-28 sm:w-36 h-20 sm:h-24" src="/burger-icon-transparent.png" alt="Burger Icon" />
           </span>
-        </a>
-
+        </Link>
       </div>
-      <nav className="flex-1 flex justify-center items-center gap-14 text-lg mr-25 font-medium text-gray-800">
+
+      {/* Navigation */}
+      <nav className="w-full sm:w-auto flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-14 mt-4 sm:mt-0 text-base sm:text-lg font-medium text-gray-800">
         <NavLink href="/dashboard" label="Dashboard" />
         <NavLink href="/menu" label="Menu" />
         <NavLink href="/category" label="Category" />
@@ -61,6 +63,7 @@ function AdminHeader() {
         <NavLink href="/settings" label="Settings" />
       </nav>
     </header>
+
   );
 }
 

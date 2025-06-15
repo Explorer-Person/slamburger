@@ -60,14 +60,14 @@ function SlamBurgerMenu() {
         },
     ]
     return (
-        <section>
+        <section className="px-4 md:px-0">
             <div className="max-w-5xl mx-auto">
                 {/* Header */}
-                <h1 className="text-5xl lg:text-6xl font-[Anton] mb-2">SLAMBURGER</h1>
-                <h2 className="text-6xl lg:text-7xl font-[Anton] mb-6">MENU</h2>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-[Anton] mb-2">SLAMBURGER</h1>
+                <h2 className="text-5xl md:text-6xl lg:text-7xl font-[Anton] mb-6">MENU</h2>
 
                 {/* Category Navigation */}
-                <div className="flex gap-6 text-lg font-semibold mb-10 border-b border-gray-300 pb-2">
+                <div className="flex flex-wrap gap-4 md:gap-6 text-base md:text-lg font-semibold mb-10 border-b border-gray-300 pb-2">
                     {['burgers', 'wings', 'sides'].map((category) => (
                         <button
                             key={category}
@@ -85,60 +85,63 @@ function SlamBurgerMenu() {
 
                 {/* Menu Items */}
                 <div className="space-y-10">
-                    {
-                        menuItems.filter(item => item.category === activeCategory)
-                            .map(item => (
-                                <div
-                                    key={item.name}
-                                    className="flex items-center justify-between border-b border-gray-300 pb-6 last:border-b-0 last:pb-0"
-                                >
-                                    <div>
-                                        <h3 className="text-4xl font-semibold">{item.name}</h3>
-                                        <p className="text-lg text-gray-700">{item.desc}</p>
-                                    </div>
-                                    <div className="flex items-center gap-8">
-                                        <Image
-                                            src={item.img}
-                                            alt={item.name}
-                                            width={item.imgW}
-                                            height={item.imgH}
-                                        />
-                                        <span className="text-4xl font-bold">{item.price}</span>
-                                    </div>
+                    {menuItems
+                        .filter((item) => item.category === activeCategory)
+                        .map((item) => (
+                            <div
+                                key={item.name}
+                                className="flex flex-col md:flex-row md:items-center md:justify-between border-b border-gray-300 pb-6 last:border-b-0 last:pb-0 gap-4"
+                            >
+                                <div className="text-center md:text-left">
+                                    <h3 className="text-2xl md:text-4xl font-semibold">{item.name}</h3>
+                                    <p className="text-base md:text-lg text-gray-700">{item.desc}</p>
                                 </div>
-                            ))}
+                                <div className="flex flex-col sm:flex-row sm:items-center gap-4 md:gap-8 justify-center">
+                                    <Image
+                                        src={item.img}
+                                        alt={item.name}
+                                        width={item.imgW}
+                                        height={item.imgH}
+                                        className="mx-auto sm:mx-0"
+                                    />
+                                    <span className="text-2xl md:text-4xl font-bold text-center md:text-left mx-auto sm:mx-0">
+                                        {item.price}
+                                    </span>
+                                </div>
+                            </div>
+                        ))}
                 </div>
-
             </div>
         </section>
+
     )
 }
 
 function ClassicSlam() {
     return (
-        <section className="relative mt-25 w-full bg-[#FFF4E8] px-6 md:px-12 py-20 overflow-hidden text-[--foreground] flex justify-center items-center">
+        <section className="relative mt-25 w-full bg-[#FFF4E8] px-4 md:px-12 py-16 md:py-20 md:pb-45 overflow-hidden text-[--foreground] flex justify-center items-center">
             {/* Background Decoration */}
             <img
                 src="/3-item/arkaplan_yeni.png"
                 alt="Decorative Squiggle"
-                className="absolute top-4 left-4 w-12 md:w-20 pointer-events-none"
+                className="absolute top-4 left-4 w-12 md:w-50 pointer-events-none"
             />
 
-            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-55 relative z-10">
+            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-[55px] relative z-10">
                 {/* Burger Image */}
-                <div className="flex-shrink-0">
+                <div className="w-full lg:w-auto max-w-[800px]">
                     <Image
                         src="/3-item/ayni_burger.png"
                         alt="Classic Slam Burger"
                         width={800}
                         height={800}
-                        className="w-full max-w-[800px] h-auto"
+                        className="w-full h-auto"
                     />
                 </div>
 
                 {/* Burger Content */}
-                <div className="text-left max-w-xl space-y-7">
-                    <div className="flex gap-6 items-center">
+                <div className="text-center lg:text-left max-w-xl space-y-6 px-2 md:px-0">
+                    <div className="flex justify-center lg:justify-start gap-4 items-center">
                         <div className="text-center text-xs font-bold border-[2px] border-yellow-400 text-yellow-600 rounded-full px-3 py-1">
                             <span className="text-lg block leading-tight">640</span>
                             CALORIES
@@ -149,17 +152,17 @@ function ClassicSlam() {
                         </div>
                     </div>
 
-                    <h1 className="text-5xl lg:text-7xl font-[Anton] leading-tight">CLASSIC SLAM</h1>
-                    <p className="text-2xl font-medium text-gray-800">The burger that started it all.</p>
+                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-[Anton] leading-tight">CLASSIC SLAM</h1>
+                    <p className="text-xl md:text-2xl font-medium text-gray-800">The burger that started it all.</p>
 
-                    <div className="text-4xl font-bold">$8.99</div>
+                    <div className="text-3xl md:text-4xl font-bold">$8.99</div>
 
-                    <p className="text-lg text-gray-700">
+                    <p className="text-base md:text-lg text-gray-700">
                         Beef patty, cheddar cheese, lettuce, tomato
                     </p>
 
                     {/* Allergen Icons */}
-                    <div className="flex gap-4 text-lg items-center mt-2">
+                    <div className="flex justify-center lg:justify-start gap-4 text-base md:text-lg items-center mt-2">
                         <span className="flex items-center gap-1">
                             🧊 <span>Dairy</span>
                         </span>
@@ -171,37 +174,41 @@ function ClassicSlam() {
                     {/* Order Button */}
                     <a
                         href="#"
-                        className="inline-block bg-red-500 text-white text-xl font-bold px-6 py-3 rounded-full mt-4 hover:bg-red-600 transition"
+                        className="inline-block bg-red-500 text-white text-base md:text-xl font-bold px-6 py-3 rounded-full mt-4 hover:bg-red-600 transition"
                     >
                         ORDER NOW ON SLAMEXPRESS
                     </a>
                 </div>
             </div>
         </section>
+
+
     );
 }
 
 function NutritionSection() {
     return (
-        <section className="w-full flex flex-col items-start justify-center px-6 md:px-12 py-20 bg-[#FFF4E8] text-[--foreground]">
-            <h2 className="lg:text-7xl ml-55 font-[Anton]">
+        <section className="w-full flex flex-col px-4 md:px-12 py-16 md:py-20 bg-[#FFF4E8] text-[--foreground]">
+            {/* Section Heading */}
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-[Anton] mb-10  md:mb-16 text-center md:text-left md:ml-140">
                 NUTRITIONAL INFO <br /> & INGREDIENTS
             </h2>
+
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                {/* Left side: text info */}
-                <div className="space-y-6">
-                    <p className="text-2xl font-medium text-gray-800">
+                {/* Left side: Text Info */}
+                <div className="space-y-6 text-center md:text-left px-2 md:px-0">
+                    <p className="text-xl md:text-2xl font-medium text-gray-800">
                         Here’s what goes into your burger.
                     </p>
 
-                    <div className="grid grid-cols-2 gap-8 mt-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-6">
                         {/* Nutritional Values */}
                         <div>
-                            <h3 className="text-2xl font-bold mb-4">Nutritional Values</h3>
-                            <ul className="space-y-2 text-lg">
+                            <h3 className="text-xl md:text-2xl font-bold mb-4">Nutritional Values</h3>
+                            <ul className="space-y-2 text-base md:text-lg">
                                 <li className="flex justify-between">
                                     <span className="text-orange-500">🔥 Calories</span>
-                                    <span >640 kcal</span>
+                                    <span>640 kcal</span>
                                 </li>
                                 <li className="flex justify-between">
                                     <span className="text-orange-500">🍗 Protein</span>
@@ -224,8 +231,8 @@ function NutritionSection() {
 
                         {/* Ingredients */}
                         <div>
-                            <h3 className="text-2xl font-bold mb-4">Ingredients</h3>
-                            <ul className="space-y-2 text-lg">
+                            <h3 className="text-xl md:text-2xl font-bold mb-4">Ingredients</h3>
+                            <ul className="space-y-2 text-base md:text-lg">
                                 <li>🍔 100% Angus Beef Patty</li>
                                 <li>🧀 American Cheddar Cheese</li>
                                 <li>🍞 Brioche Bun</li>
@@ -237,17 +244,18 @@ function NutritionSection() {
                     </div>
                 </div>
 
-                {/* Right side: burger image */}
-                <div className="flex justify-center">
+                {/* Right side: Burger Image */}
+                <div className="flex justify-center px-2 md:px-0">
                     <Image
                         src="/3-item/ayni_burger.png"
                         alt="Burger visual"
                         width={400}
                         height={400}
-                        className="w-full max-w-xs md:max-w-sm h-auto object-contain"
+                        className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-sm h-auto object-contain"
                     />
                 </div>
             </div>
         </section>
+
     );
 }
