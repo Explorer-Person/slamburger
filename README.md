@@ -27,46 +27,70 @@ Bu depo iki ayrı Next.js uygulaması içerir:
 
 ## Dizin Yapısı (Özet)
 
-/ (repo root)
-├── slam-admin-panel/
-│   ├── README.md
-│   ├── eslint.config.mjs
-│   ├── next.config.ts
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── postcss.config.mjs
-│   ├── tsconfig.json
-│   ├── public/
-│   │   ├── 6.1-login/
-│   │   └── 6.2-menuedit/
-│   └── src/
-│       └── app/
-│           ├── category/
-│           ├── dashboard/
-│           ├── login/
-│           ├── menu/
-│           ├── orders/
-│           └── settings/
-├── slamburger_client/
-│   ├── README.md
-│   ├── eslint.config.mjs
-│   ├── next.config.ts
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── postcss.config.mjs
-│   ├── tsconfig.json
-│   ├── public/
-│   │   ├── 1-landing/
-│   │   ├── 2-menu/
-│   │   ├── 3-item/
-│   │   ├── 4-about/
-│   │   └── 5-contact/
-│   └── app/
-│       ├── about_us/
-│       ├── contact/
-│       ├── gallery/
-│       └── menu/
-└── .git/   (Git metadata)
+# Proje Dizin Yapısı
+
+## Root (`/`)
+
+- `.git/`  
+  Git metadata klasörü.
+
+### `slam-admin-panel/`  
+Yönetici paneli (Next.js + TypeScript) uygulaması.
+
+- `README.md`  
+  Uygulama ile ilgili temel bilgiler.
+- `eslint.config.mjs`  
+  Lint ayarları.
+- `next.config.ts`  
+  Next.js yapılandırması.
+- `package.json`, `package-lock.json`  
+  Bağımlılıklar ve betikler.
+- `postcss.config.mjs`  
+  PostCSS yapılandırması.
+- `tsconfig.json`  
+  TypeScript yapılandırma dosyası.
+- `public/`  
+  Ortak statik dosyalar:
+  - `6.1-login/` – Giriş sayfası görselleri.
+  - `6.2-menuedit/` – Menü düzenleme ekranına ait içerikler.
+- `src/app/`  
+  Sayfa ve yönlendirme yapısı:
+  - `category/` – Kategori yönetimi.
+  - `dashboard/` – Yönetim paneli ana ekranı.
+  - `login/` – Giriş sayfası.
+  - `menu/` – Menü düzenleme sayfası.
+  - `orders/` – Sipariş yönetimi.
+  - `settings/` – Ayarlar bölümü.
+
+### `slamburger_client/`  
+Kullanıcı arayüzü (Vite + React) uygulaması.
+
+- `README.md`  
+  Uygulama hakkında temel açıklamalar.
+- `eslint.config.mjs`  
+  Lint ayarları.
+- `next.config.ts`  
+  Next.js yapılandırma dosyası.
+- `package.json`, `package-lock.json`  
+  Proje bağımlılıkları.
+- `postcss.config.mjs`  
+  PostCSS yapılandırması.
+- `tsconfig.json`  
+  TypeScript konfigürasyonu.
+- `public/`  
+  Statik sayfa görselleri:
+  - `1-landing/` – Ana sayfa içerikleri.
+  - `2-menu/` – Menü listesi sayfası.
+  - `3-item/` – Ürün detay sayfası.
+  - `4-about/` – Hakkımızda sayfası.
+  - `5-contact/` – İletişim sayfası.
+- `app/`  
+  Uygulama sayfaları:
+  - `about_us/` – Hakkımızda bölümü.
+  - `contact/` – İletişim sayfası.
+  - `gallery/` – Galeri sayfası.
+  - `menu/` – Menü sayfası.
+
 
 
 
