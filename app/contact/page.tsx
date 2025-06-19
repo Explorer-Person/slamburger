@@ -19,7 +19,7 @@ function CallToAction() {
         <section
             className="
             relative
-            md:mt-75 md:mb-75
+            md:mt-65 md:mb-75
             flex flex-col-reverse md:flex-row items-center
             w-[95%] mx-auto px-4 sm:px-6
             py-25 sm:py-52 md:py-16
@@ -59,7 +59,7 @@ function CallToAction() {
                 <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-[Anton] mb-6">
                     GET IN TOUCH
                 </h2>
-                <p className="text-base w-80 sm:text-lg mb-6">
+                <p className="text-base w-150 sm:text-lg mb-6">
                     We’d love to hear from you—whether it’s feedback, franchise inquiries, or just to say hi.
                 </p>
                 <button className="bg-[#F44336] text-white font-semibold px-6 py-3 rounded-lg hover:bg-red-600 transition">
