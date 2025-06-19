@@ -31,7 +31,7 @@ function CallToAction() {
                 className="
                 w-full
                 absolute
-                mr-50
+                mr-25
                 max-w-[80%] sm:max-w-[400px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[1100px]
                 mx-auto
                 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2
@@ -52,7 +52,7 @@ function CallToAction() {
             {/* Left: Text content */}
             <div
                 className="
-                text-center md:ml-75 md:text-left max-w-xl z-10
+                text-center md:ml-35 md:text-left max-w-xl z-10
                 mt-[150px] sm:mt-[280px] md:mt-0
                 "
             >
