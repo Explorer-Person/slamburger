@@ -1,15 +1,10 @@
 'use client'
-<<<<<<< HEAD
 import { getSectionAnim } from "../animation-util";
 import { motion } from "framer-motion";
-=======
-
->>>>>>> b628b202b3359e5396e88d0056c2af1eb6c18c90
 
 export default function Gallery() {
     return (
         <main className="flex flex-col items-center w-full bg-[--background] text-[--foreground] font-[var(--font-body)]">
-<<<<<<< HEAD
             <GalleryMasonry />
             {/* Add any additional components or sections here */}
         </main>
@@ -88,9 +83,3 @@ function GalleryMasonry() {
         </section>
     );
 }
-=======
-
-        </main>
-    );
-}
->>>>>>> b628b202b3359e5396e88d0056c2af1eb6c18c90

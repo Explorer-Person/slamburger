@@ -32,11 +32,7 @@ export default function RootLayout({
 
 function Header() {
   return (
-<<<<<<< HEAD
     <header className="fixed top-0 left-0 w-full z-50 flex flex-col md:flex-row items-center justify-between px-4 md:px-10 py-4 md:py-8 bg-[#FFF4E8] opacity-100 shadow-md gap-y-4 md:gap-y-0 md:gap-x-8 text-center md:text-left">
-=======
-    <header className="flex flex-col md:flex-row items-center justify-between px-4 md:px-10 py-4 md:py-8 bg-[--background] shadow-md gap-y-4 md:gap-y-0 md:gap-x-8 text-center md:text-left">
->>>>>>> b628b202b3359e5396e88d0056c2af1eb6c18c90
       <Link href="/" aria-label="Go to homepage">
         <h1 className="text-2xl md:text-4xl font-[Anton] text-[--foreground] tracking-wide cursor-pointer">
           SLAMBURGER
@@ -50,10 +46,6 @@ function Header() {
         <a href="/contact" className="hover:text-[--accent]">Contact</a>
       </nav>
     </header>
-<<<<<<< HEAD
-=======
-
->>>>>>> b628b202b3359e5396e88d0056c2af1eb6c18c90
   );
 }
 
