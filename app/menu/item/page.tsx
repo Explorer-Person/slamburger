@@ -1,0 +1,168 @@
+'use client'
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { getSectionAnim } from "../../animation-util";
+import { motion } from "framer-motion";
+import { menuItems, nutritions, ingredients, MenuItem } from '../menu_items'; // Adjust the import path as necessary
+import { useSearchParams } from 'next/navigation';
+
+
+export default function Item() {
+    const [item, setItem] = useState<MenuItem | null>(null);
+    const searchParams = useSearchParams();
+    const itemName = searchParams.get('name'); // For ?item=something
+    useEffect(() => {
+        console.log('Item name from search params:', itemName);
+        if (itemName) {
+            // Convert dashes to spaces for comparison
+            const name = itemName
+                .replace(/-/g, ' ')
+                .replace(/\b\w/g, char => char.toUpperCase());
+
+            // Use find to get a single item or undefined
+            const found = menuItems.find((item) => item.name === name);
+            setItem(found ?? null);
+        } else {
+            setItem(null);
+        }
+    }, [itemName]);
+
+    console.log('Item component rendered with item:', item);
+    return (
+        <main className="w-full bg-[#FFF4E8] text-[--foreground] font-[var(--font-body)] px-6 md:px-12 py-20 mt-5">
+            <ClassicSlam item={item} />
+            <NutritionSection item={item} />
+        </main>
+    );
+}
+
+function ClassicSlam({ item }: { item: MenuItem | null }) {
+    return (
+        <section className="relative mt-25 w-full bg-[#FFF4E8] px-4 md:px-12 py-16 md:py-20 md:pb-45 overflow-hidden text-[--foreground] flex justify-center items-center">
+            {/* Background Decoration */}
+            <img
+                src="/3-item/arkaplan_yeni.png"
+                alt="Decorative Squiggle"
+                className="absolute top-4 left-4 w-12 md:w-50 pointer-events-none"
+            />
+
+            <div className="max-w-8xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-[55px] relative z-10">
+                {/* Burger Image */}
+                <motion.div {...getSectionAnim({ direction: "", delay: 0.1 })} className="w-full lg:w-auto max-w-[1200px]">
+                    <Image
+                        src={item?.img || "/fallback.png"}
+                        alt={item?.name || "Burger Image"}
+                        width={1200}
+                        height={800}
+                        className="w-full h-auto"
+                    />
+                </motion.div>
+
+                {/* Burger Content */}
+                <motion.div {...getSectionAnim({ direction: "up", delay: 0.1 })} className="text-center lg:text-left max-w-xl space-y-6 px-2 md:px-0">
+                    
+                    <h1 className="text-4xl md:text-5xl lg:text-9xl font-[Anton] leading-tight">
+                        {item?.name?.toUpperCase() || "ITEM NAME"}
+                    </h1>
+                    <p className="text-xl md:text-2xl font-medium text-gray-800">
+                        {item?.desc || "No description available."}
+                    </p>
+
+                    <div className="text-3xl md:text-5xl font-bold">{item?.price || ""}</div>
+
+                    {/* Optionally show other details here, if you have more in item */}
+                    {/* Allergen, protein, etc */}
+
+                    {/* Order Button */}
+                    <a
+                        href="#"
+                        className="inline-block bg-red-500 text-white text-base md:text-xl font-bold px-6 py-3 rounded-full mt-4 hover:bg-red-600 transition"
+                    >
+                        ORDER NOW ON SLAMEXPRESS
+                    </a>
+                </motion.div>
+            </div>
+        </section>
+
+
+
+    );
+}
+
+function NutritionSection({ item }: { item: MenuItem | null }) {
+
+    const burgerName = 'Bacon Burger';
+    const nutrition = nutritions.find(n => n.name === burgerName);
+    const itemIngredients = ingredients.find(i => i.name === item?.name);
+
+    return (
+        <section className="w-full flex flex-col px-4 md:px-12 py-16 md:py-20 bg-[#FFF4E8] text-[--foreground]">
+            {/* Section Heading */}
+            <motion.h2 {...getSectionAnim({ direction: "", delay: 0.1 })} className="text-4xl md:text-6xl lg:text-9xl font-[Anton] mb-10  md:mb-12 text-center md:text-left md:ml-70">
+                NUTRITIONAL INFO <br /> & INGREDIENTS
+            </motion.h2>
+
+            <motion.div {...getSectionAnim({ direction: "left", delay: 0.1 })} className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                {/* Left side: Text Info */}
+                <div className="space-y-6 text-center md:text-left px-2 md:px-0">
+                    <p className="text-xl md:text-3xl font-medium text-gray-800">
+                        Here’s what goes into your burger.
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-6">
+                        {/* Nutritional Values */}
+                        <div>
+                            <h3 className="text-xl md:text-3xl font-bold mb-4">Nutritional Values</h3>
+                            <ul className="space-y-2 text-base md:text-xl">
+                                <li className="flex justify-between">
+                                    <span className="text-orange-500">🔥 Calories</span>
+                                    <span>{nutrition?.calories ?? "-"} kcal</span>
+                                </li>
+                                <li className="flex justify-between">
+                                    <span className="text-orange-500">🍗 Protein</span>
+                                    <span>{nutrition?.protein ?? "-"} g</span>
+                                </li>
+                                <li className="flex justify-between">
+                                    <span className="text-orange-500">🍞 Carbs</span>
+                                    <span>{nutrition?.carbs ?? "-"} g</span>
+                                </li>
+                                <li className="flex justify-between">
+                                    <span className="text-orange-500">🥓 Fat</span>
+                                    <span>{nutrition?.fat ?? "-"} g</span>
+                                </li>
+                                <li className="flex justify-between">
+                                    <span className="text-orange-500">🧂 Sodium</span>
+                                    <span>{nutrition?.sodium ?? "-"} mg</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* Ingredients */}
+                        <div>
+                            <h3 className="text-xl md:text-3xl font-bold mb-4">Ingredients</h3>
+                            <ul className="space-y-2 text-base md:text-xl">
+                                {itemIngredients?.list?.length ? (
+                                    itemIngredients.list.map((ing: string, i: number) => <li key={i}>{ing}</li>)
+                                ) : (
+                                    <li>No ingredients listed.</li>
+                                )}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Right side: Burger Image */}
+                <motion.div {...getSectionAnim({ direction: "right", delay: 0.2 })} className="flex justify-center px-2 md:px-0">
+                    <Image
+                        src={item?.img || "/fallback.png"}
+                        alt={item?.name || "Burger visual"}
+                        width={800}
+                        height={800}
+                        className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-sm h-auto object-contain"
+                    />
+                </motion.div>
+            </motion.div>
+        </section>
+
+    );
+}
