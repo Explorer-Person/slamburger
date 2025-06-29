@@ -1,13 +1,23 @@
 'use client'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import Image from 'next/image';
 import { getSectionAnim } from "../../animation-util";
 import { motion } from "framer-motion";
 import { menuItems, nutritions, ingredients, MenuItem } from '../menu_items'; // Adjust the import path as necessary
 import { useSearchParams } from 'next/navigation';
 
+export default function chooseItem() {
 
-export default function Item() {
+    return (
+        <div>
+            <Suspense fallback={<div>Loading...</div>}>
+                <Item />
+            </Suspense>
+        </div>
+    )
+}
+
+function Item() {
     const [item, setItem] = useState<MenuItem | null>(null);
     const searchParams = useSearchParams();
     const itemName = searchParams.get('name'); // For ?item=something
@@ -60,7 +70,7 @@ function ClassicSlam({ item }: { item: MenuItem | null }) {
 
                 {/* Burger Content */}
                 <motion.div {...getSectionAnim({ direction: "up", delay: 0.1 })} className="text-center lg:text-left max-w-xl space-y-6 px-2 md:px-0">
-                    
+
                     <h1 className="text-4xl md:text-5xl lg:text-9xl font-[Anton] leading-tight">
                         {item?.name?.toUpperCase() || "ITEM NAME"}
                     </h1>
