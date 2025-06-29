@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FFF4E8;
+  --foreground: #1B1B1B;
+  --accent: #F75C1E;
+  --accent-light: #F28A49;
+  --font-heading: 'Anton', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+
+  /* Responsive Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+
+  /* Responsive Font Sizes */
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-md: 1rem;
+  --font-lg: 1.25rem;
+  --font-xl: 2rem;
+  --font-2xl: 3rem;
+
+  /* Container Widths */
+  --container-sm: 540px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+}
+
+
+
+@media (min-width: 768px) {
+  :root {
+    --font-md: 1.125rem;
+    --font-lg: 1.5rem;
+    --font-xl: 2.25rem;
+    --space-md: 2rem;
+    --space-lg: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --font-md: 1.25rem;
+    --font-lg: 1.75rem;
+    --font-xl: 2.5rem;
+    --font-2xl: 4rem;
+    --space-md: 2.5rem;
+    --space-lg: 4rem;
+    --space-xl: 5rem;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+}
+html,
+body {
+  overflow-x: hidden;
+<<<<<<< HEAD
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-fade-in-up {
+  opacity: 0;
+  animation: fade-in-up 0.7s cubic-bezier(0.39, 0.575, 0.565, 1) forwards;
+}
+
+.scroll-fade-in-up.visible {
+  opacity: 1;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.scroll-fade-in {
+  opacity: 0;
+  animation: fade-in 0.7s ease forwards;
+}
+
+.scroll-fade-in.visible {
+  opacity: 1;
+}
+=======
+}
+>>>>>>> b628b202b3359e5396e88d0056c2af1eb6c18c90
