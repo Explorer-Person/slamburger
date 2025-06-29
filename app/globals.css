@@ -62,6 +62,7 @@ body {
 html,
 body {
   overflow-x: hidden;
+<<<<<<< HEAD
 }
 
 @keyframes fade-in-up {
@@ -97,3 +98,6 @@ body {
 .scroll-fade-in.visible {
   opacity: 1;
 }
+=======
+}
+>>>>>>> b628b202b3359e5396e88d0056c2af1eb6c18c90
