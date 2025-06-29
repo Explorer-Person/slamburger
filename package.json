@@ -9,10 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
     "motion": "^12.19.1",
-=======
->>>>>>> b628b202b3359e5396e88d0056c2af1eb6c18c90
     "next": "15.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
