@@ -517,7 +517,7 @@ function ContactUs() {
         </div>
 
         {/* Right Form */}
-        <motion.form {...getSectionAnim({ direction: "up", delay: 0.1 })} className="w-95  space-y-12 bg-white/5 rounded-xl border/50 shadow-md p-4 md:p-6 space-y-4 ">
+        <motion.form {...getSectionAnim({ direction: "up", delay: 0.1 })} className="w-92  space-y-12 bg-white/5 rounded-xl border/50 shadow-md p-4 md:p-6 space-y-4 ">
           <div>
             <label className="block mb-1 font-medium text-2xl text-left">Name</label>
             <input
