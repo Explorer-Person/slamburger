@@ -9,7 +9,7 @@ import {menuItems} from './menu_items'; // Adjust the import path as necessary
 export default function Menu() {
     // State to manage active category
     return (
-        <main className="w-full md:w-425 bg-[#FFF4E8] text-[--foreground] font-[var(--font-body)] px-6 md:px-12 py-20">
+        <main className="w-full md:w-full bg-[#FFF4E8] text-[--foreground] font-[var(--font-body)] px-6 md:px-0 py-20">
             <SlamBurgerMenu />
         </main>
     );
@@ -23,8 +23,8 @@ function SlamBurgerMenu() {
 
     
     return (
-        <section className="md:px-4 md:px-0 mt-45 md:mt-25">
-            <div className="w-full md:max-w-8xl md:mx-25">
+        <section className="relative w-full bg-[var(--background)] text-[var(--foreground)] md:px-15 pt-45 md:pt-25">
+            <div className="w-full md:max-w-8xl">
                 {/* Header */}
                 <motion.h1 {...getSectionAnim({ direction: "", delay: 0.1 })} className="text-5xl md:text-5xl lg:text-8xl tracking-wide font-[Anton] mb-2">SLAMBURGER</motion.h1>
                 <motion.h2 {...getSectionAnim({ direction: "", delay: 0.2 })} className="text-7xl md:text-6xl lg:text-9xl tracking-widest font-[Anton] mb-15">MENU</motion.h2>

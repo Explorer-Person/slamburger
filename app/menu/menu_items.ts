@@ -1,5 +1,6 @@
 export const menuItems = [
     {
+        id: 1,
         category: 'burgers',
         name: 'Bacon Burger',
         desc: 'Juicy beef patty, crispy bacon, cheddar cheese, lettuce, tomato',
@@ -9,6 +10,7 @@ export const menuItems = [
         imgH: 240,
     },
     {
+        id: 2,
         category: 'wings',
         name: 'Fried Chicken Drumsticks',
         desc: 'Classic fried chicken drumsticks, seasoned to perfection',
@@ -18,6 +20,7 @@ export const menuItems = [
         imgH: 240,
     },
     {
+        id: 3,
         category: 'burgers',
         name: 'Crispy Chicken Burger',
         desc: 'Crispy fried chicken, lettuce, tomato, cheese, on a toasted bun',
@@ -27,6 +30,7 @@ export const menuItems = [
         imgH: 240,
     },
     {
+        id: 4,
         category: 'burgers',
         name: 'Double Burger',
         desc: 'Double beef patties, cheddar, lettuce, tomato, special sauce',
@@ -36,6 +40,7 @@ export const menuItems = [
         imgH: 240,
     },
     {
+        id: 5,
         category: 'sides',
         name: 'Extra Crispy Garlic Truffle Fries',
         desc: 'Golden fries tossed with garlic and truffle oil',
@@ -45,6 +50,7 @@ export const menuItems = [
         imgH: 240,
     },
     {
+        id: 6,
         category: 'sides',
         name: 'Fries',
         desc: 'Classic French fries, crispy and golden',
@@ -54,6 +60,7 @@ export const menuItems = [
         imgH: 240,
     },
     {
+        id: 7,
         category: 'wings',
         name: 'Fried Chicken & Fries',
         desc: 'Crispy chicken served with fries and dipping sauce',
@@ -63,6 +70,7 @@ export const menuItems = [
         imgH: 240,
     },
     {
+        id: 8,
         category: 'drinks',
         name: 'Coke',
         desc: 'Ice-cold glass of Coke',
@@ -72,6 +80,7 @@ export const menuItems = [
         imgH: 240,
     },
     {
+        id: 9,
         category: 'burgers',
         name: 'Hot Burger',
         desc: 'Spicy beef patty, jalapeños, cheese, hot sauce',
@@ -81,6 +90,7 @@ export const menuItems = [
         imgH: 240,
     },
     {
+        id: 10,
         category: 'burgers',
         name: 'Huge Burger',
         desc: 'Massive burger stacked with fried meat and veggies',
@@ -90,6 +100,7 @@ export const menuItems = [
         imgH: 240,
     },
     {
+        id: 11,
         category: 'burgers',
         name: 'Klasik Burger',
         desc: 'Classic beef patty, lettuce, tomato, onion, cheese',
@@ -99,8 +110,9 @@ export const menuItems = [
         imgH: 240,
     },
     {
+        id: 12,
         category: 'burgers',
-        name: 'Klasik Burger (alt)',
+        name: 'Cheddar Burger',
         desc: 'Traditional classic burger with all the fixings',
         img: '/2-menu/klasikburger.png',
         price: '$8.99',
@@ -108,6 +120,7 @@ export const menuItems = [
         imgH: 240,
     },
     {
+        id: 13,
         category: 'burgers',
         name: 'Spicy Burger',
         desc: 'Beef patty with spicy sauce, jalapeños, and cheese',
@@ -117,6 +130,7 @@ export const menuItems = [
         imgH: 240,
     },
     {
+        id: 14,
         category: 'burgers',
         name: 'Ultimate Southern Burger',
         desc: 'Southern-style burger with fried chicken, pickles, and sauce',
@@ -126,6 +140,7 @@ export const menuItems = [
         imgH: 240,
     },
     {
+        id: 15,
         category: 'burgers',
         name: 'Veggie Burger',
         desc: 'Plant-based patty, lettuce, tomato, onions, pickles',
@@ -135,6 +150,7 @@ export const menuItems = [
         imgH: 240,
     },
     {
+        id: 16,
         category: 'sides', // changed from 'drinks'
         name: 'Coke',
         desc: 'Ice-cold glass of Coke',
@@ -235,7 +251,7 @@ export const nutritions = [
         sodium: 980
     },
     {
-        name: 'Klasik Burger (alt)',
+        name: 'Cheddar Burger',
         calories: 650,
         protein: 32,
         carbs: 45,
@@ -386,7 +402,7 @@ export const ingredients = [
         ]
     },
     {
-        name: 'Klasik Burger (alt)',
+        name: 'Cheddar Burger',
         list: [
             'Beef Patty',
             'Lettuce',
@@ -436,6 +452,7 @@ export const ingredients = [
 
 
 export interface MenuItem {
+    id: number;
     category: string;
     name: string;
     desc: string;
@@ -454,5 +471,14 @@ export interface MenuItem {
         name?: string;
         list?: string[];
     };
+    quantity?: number;
+    options?: MenuItemOption;
+    status?: 'Visible' | 'Hidden';
 }
 
+export interface MenuItemOption {
+        noOnion?: boolean;
+        extraCheese?: boolean;
+        addPickles?: boolean;
+        makeMeal?: boolean;
+    };

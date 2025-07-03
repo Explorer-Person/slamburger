@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 import { useState } from 'react';
 import { FaPhoneAlt, FaEnvelope, FaInstagram, FaFacebook } from 'react-icons/fa';
@@ -26,7 +27,7 @@ function Hero() {
   return (
     <section
       id='hero'
-      className="w-full mt-35 bg-[--background] text-[--foreground] overflow-hidden"
+      className="w-full mt-35 bg-[var(--background)] text-[var(--foreground)] overflow-hidden"
 
     >
       <div className="max-w-8xl mx-auto mt-15 px-4 md:px-6 py-16 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 items-center relative">
@@ -42,7 +43,7 @@ function Hero() {
           </motion.p>
           <motion.a {...getSectionAnim({ direction: "", delay: 0.20 })}
             href="/menu"
-            className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded-md font-semibold text-xl tracking-wide transition"
+            className="inline-block bg-[var(--button-bg)] hover:bg-[var(--button-bg-hover)] text-[var(--button-fg)] px-5 py-3 rounded-md font-semibold text-xl tracking-wide transition"
           >
             SEE OUR MENU
           </motion.a>
@@ -74,7 +75,7 @@ function Hero() {
 
 function SignatureDishes() {
   return (
-    <section id='signature' className="relative w-full bg-[--background] text-[--foreground] px-4 md:px-12 py-16 md:py-20 overflow-hidden">
+    <section id='signature' className="relative w-full bg-[var(--background)] text-[var(--foreground)] px-4 md:px-12 py-16 md:py-20 overflow-hidden">
       {/* Background squiggle image (position altered only on mobile) */}
       <img
         src="/1-landing/2-signature/signature_arkaplan.png"
@@ -172,7 +173,7 @@ function AboutUs() {
     </>
   );
   return (
-    <section id='about' className="relative w-full bg-[--background] px-4 md:px-12 py-16 md:py-20 overflow-hidden text-[--foreground]">
+    <section id='about' className="relative w-full bg-[var(--background)] text-[var(--foreground)] px-4 md:px-12 py-16 md:py-20 overflow-hidden">
       {/* Background squiggle */}
       <Image
         src="/1-landing/3-about/about_arkaplan.png"
@@ -227,8 +228,8 @@ function AboutUs() {
               mt-4
               px-5 py-2
               rounded-full
-              bg-gradient-to-r from-yellow-400 to-red-400
-              text-black font-bold
+              bg-[var(--button-bg)] hover:bg-[var(--button-bg-hover)] text-[var(--button-fg)] 
+              font-bold
               shadow-lg
               hover:from-red-500 hover:to-yellow-300 hover:scale-105 hover:text-white
               active:scale-95
@@ -263,7 +264,7 @@ function AboutUs() {
 
 function FeaturedItems() {
   return (
-    <section id='featured' className="relative max-w-8xl bg-[--background] px-0 md:px-6 py-16 md:py-20 overflow-hidden text-[--foreground]">
+    <section id='featured' className="relative w-full bg-[var(--background)] text-[var(--foreground)] px-0 md:px-6 py-16 md:py-20 overflow-hidden">
       {/* Decorative Left Squiggle (unchanged) */}
       <img
         src="/1-landing/4-featured/featured_arkaplan.png"
@@ -372,7 +373,7 @@ function FeaturedItems() {
 
 function Gallery() {
   return (
-    <section id='gallery' className="relative w-full bg-[--background] px-4 md:px-12 py-16 md:py-20 overflow-hidden text-[--foreground]">
+    <section id='gallery' className="relative w-full bg-[var(--background)] text-[var(--foreground)] px-4 md:px-12 py-16 md:py-20 overflow-hidden">
       {/* Background squiggle */}
       <img
         src="/1-landing/5-gallery/galeri_arkaplan.png"
@@ -431,7 +432,7 @@ function Gallery() {
 
 function LocationAndHours() {
   return (
-    <section id='location' className="relative w-full bg-[--background] px-4 md:px-12 py-16 md:py-20 text-[--foreground]">
+    <section id='location' className="relative w-full bg-[var(--background)] text-[var(--foreground)] px-4 md:px-12 py-16 md:py-20 text-[--foreground]">
       <div className="max-w-8xl md:mx-40 flex flex-col md:flex-row items-center md:items-start justify-between gap-10 md:gap-12">
 
         {/* Left Side - Text */}
@@ -448,7 +449,7 @@ function LocationAndHours() {
             <strong>11:00 AM – 9:00 PM</strong>
           </motion.p>
 
-          <motion.button {...getSectionAnim({ direction: "up", delay: 0.1 })} className="mt-4 bg-[--accent] bg-orange-500 hover:bg-orange-600 text-white font-semibold text-xl cursor-pointer px-6 py-3 rounded-md transition">
+          <motion.button {...getSectionAnim({ direction: "up", delay: 0.1 })} className="mt-4 bg-[var(--button-bg)] hover:bg-[var(--button-bg-hover)] text-[var(--button-fg)] font-semibold text-xl cursor-pointer px-6 py-3 rounded-md transition">
             GET DIRECTIONS
           </motion.button>
         </div>
@@ -472,7 +473,7 @@ function ContactUs() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
 
   return (
-    <section id='contact' className="relative w-full bg-[#FFF4E8] px-4 md:px-12 py-16 md:py-20 overflow-hidden text-[--foreground]">
+    <section id='contact' className="relative w-full bg-[var(--background)] text-[var(--foreground)] md:px-12 py-16 md:py-20 overflow-hidden">
       {/* Background Elements — UNTOUCHED */}
       <img
         src="/1-landing/7-contact/iletişim_arkaplan.png"
@@ -516,7 +517,7 @@ function ContactUs() {
         </div>
 
         {/* Right Form */}
-        <motion.form {...getSectionAnim({ direction: "up", delay: 0.1 })} className="w-100 md:w-150 space-y-12 bg-white/5 rounded-xl border/50 shadow-md p-4 md:p-6 space-y-4 max-w-md mx-auto ">
+        <motion.form {...getSectionAnim({ direction: "up", delay: 0.1 })} className="w-95  space-y-12 bg-white/5 rounded-xl border/50 shadow-md p-4 md:p-6 space-y-4 ">
           <div>
             <label className="block mb-1 font-medium text-2xl text-left">Name</label>
             <input
@@ -549,7 +550,7 @@ function ContactUs() {
           </div>
           <button
             type="submit"
-            className="w-full bg-[--accent] bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded tracking-wide text-xl"
+            className="w-full bg-[var(--button-bg)] hover:bg-[var(--button-bg-hover)] text-[var(--button-fg)] font-semibold py-3 rounded tracking-wide text-xl"
           >
             SEND MESSAGE
           </button>

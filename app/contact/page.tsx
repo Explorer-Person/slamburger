@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 import { useState } from 'react';
 import Image from 'next/image';
@@ -7,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
     return (
-        <main className="bg-[#FFF7EA] text-black font-sans w-full overflow-hidden">
+        <main className="bg-[var(--background)] text-[var(--foreground)] font-sans w-full overflow-hidden">
             <CallToAction />
             <ContactOptions />
             <MessageForm />
@@ -22,10 +23,10 @@ function CallToAction() {
         <section
             className="
             relative
-            md:mt-65 md:mb-75
-            flex flex-col-reverse md:flex-row items-center
+            w-full
+            md:mt-65 md:mb-75 md:py-25
             w-[100%] mx-auto px-4 sm:px-6
-            py-25 sm:py-52 md:py-25
+            py-20  
         "
         >
             {/* Right: Image - absolutely positioned */}
@@ -34,7 +35,7 @@ function CallToAction() {
                 className="
                 w-full
                 absolute
-                max-w-[80%] sm:max-w-[400px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[1000px]
+                max-w-[80%] sm:max-w-[400px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[900px]
                 top-80
                 mx-auto
                 lg:absolute lg:right-25 lg:55 lg:-translate-y-1/2
@@ -47,7 +48,7 @@ function CallToAction() {
                     alt="Burger with Phone"
                     width={1200}
                     height={1200}
-                    className="w-full h-auto"
+                    className="w-full h-auto mx-5"
                     priority
                 />
             </motion.div>
@@ -56,16 +57,17 @@ function CallToAction() {
             <motion.div
                 {...getSectionAnim({ direction: "", delay: 0.1 })}
                 className="
+                        text-center
                         md:ml-35 md:text-left max-xl z-10
                 mt-[150px] sm:mt-[280px] md:mt-0"
             >
-                <h2 className="text-7xl sm:text-7xl md:text-7xl lg:text-9xl mb-10 ml-15 tracking-wide font-[Anton] mb-6">
+                <h2 className="text-7xl sm:text-7xl md:text-7xl lg:text-9xl mb-10 tracking-wide font-[Anton] mb-6">
                     GET IN <br /> TOUCH
                 </h2>
-                <p className="text-lg mt-85 w-75 md:w-150 sm:text-lg md:text-2xl mb-10">
+                <p className="text-lg mt-85 mb-10 md:w-100 md:text-2xl md:mt-20">
                     We’d love to hear from you—whether it’s feedback, franchise inquiries, or just to say hi.
                 </p>
-                <button className="bg-[#F44336] text-xl text-white font-semibold px-6 py-3 rounded-lg hover:bg-red-600 transition">
+                <button className="bg-[var(--button-bg)] hover:bg-[var(--button-bg-hover)] text-[var(--button-fg)] font-semibold px-6 py-3 rounded-lg hover:bg-red-600 transition">
                     CONTACT US
                 </button>
             </motion.div>
@@ -77,7 +79,7 @@ function CallToAction() {
 
 function ContactOptions() {
     return (
-        <section className="relative max-w-8xl mx-auto px-4 sm:px-6 py-16 top-35 mb-45 text-center">
+        <section className="relative w-full px-4 md:px-6 py-16 top-35 md:mb-45 text-center">
             <motion.h2 {...getSectionAnim({ direction: "", delay: 0.1 })} className="text-7xl md:text-7xl lg:text-9xl font-[Anton] mb-6 sm:mb-10">
                 CONTACT US
             </motion.h2>
@@ -89,7 +91,7 @@ function ContactOptions() {
                 className="sm:hidden md:block absolute md:h-full left-20 w-[200px] md:w-300 md:bottom-10 md:ml-65"
             />
 
-            <motion.p {...getSectionAnim({ direction: "", delay: 0.2 })} className="text-lg mt-45 sm:text-3xl mb-10 sm:mb-12">
+            <motion.p {...getSectionAnim({ direction: "", delay: 0.2 })} className="text-lg md:mt-45 md:text-3xl mb-10 md:mb-12">
                 Get in touch with us for any questions or concerns.
             </motion.p>
 
@@ -156,7 +158,7 @@ function MessageForm() {
     };
 
     return (
-        <section className="relative max-w-8xl mx-auto px-4 sm:px-6 py-25 pt-28 flex flex-col md:flex-row items-start gap-12">
+        <section className="relative w-full text-center px-4 sm:px-6 pb-25 pt-28 flex flex-col md:flex-row items-start gap-12">
             {/* Background squiggle decoration - only on md+ */}
             <img
                 src="/5-contact/3-message.png"
@@ -165,14 +167,14 @@ function MessageForm() {
             />
 
             {/* Left text section */}
-            <motion.div {...getSectionAnim({ direction: "", delay: 0.1 })} className="flex-1 z-10 text-center md:text-left md:ml-45">
+            <motion.div {...getSectionAnim({ direction: "", delay: 0.1 })} className="flex-1 w-full z-10 text-center md:text-left md:relative md:bottom-0 md:ml-35">
                 <h2
-                    className="text-6xl ml-12 sm:text-4xl md:text-5xl lg:text-9xl font-[Anton] mb-4 tracking-widest"
+                    className="text-6xl md:ml-9 md:text-8xl md:text-start text-center font-[Anton] mb-4 tracking-widest"
                     style={{ letterSpacing: '0.1em', lineHeight: '1.4' }}
                 >
                     SEND US <br /> A MESSAGE
                 </h2>
-                <p className="text-xl ml-10 sm:text-xl md:text-5xl">
+                <p className="text-xl md:ml-10 md:text-4xl">
                     Use the form to get in touch.
                 </p>
             </motion.div>
@@ -226,7 +228,7 @@ function MessageForm() {
 
                 <button
                     type="submit"
-                    className="w-full text-xl bg-[#F44336] text-white py-3 px-6 rounded hover:bg-red-600 transition"
+                    className="w-full text-xl bg-[var(--button-bg)] hover:bg-[var(--button-bg-hover)] text-[var(--button-fg)] py-3 px-6 rounded hover:bg-red-600 transition"
                 >
                     SEND MESSAGE
                 </button>
@@ -239,7 +241,7 @@ function MessageForm() {
 
 function ContactMap() {
     return (
-        <section className="relative max-w-8xl mt-20 mx-auto px-4 sm:px-6 py-16 grid grid-cols-1 items-start gap-12 overflow-hidden">
+        <section className="relative w-full pt-60 pb-16 px-4 sm:px-0  grid grid-cols-1 items-start gap-12 overflow-hidden">
             {/* Background image - hidden on mobile */}
             <img
                 src="/5-contact/4-contact_2.png"
@@ -256,9 +258,9 @@ function ContactMap() {
             {/* Contact Info + Map */}
             <div className="flex flex-col md:flex-row items-start gap-10 mt-10 z-10">
                 {/* Left Column: Info */}
-                <div className="w-full md:w-1/2 space-y-10 md:ml-55">
+                <div className="w-full md:w-200 space-y-10 md:ml-35">
                     <motion.div {...getSectionAnim({ direction: "right", delay: 0.2 })} className="block text-center md:flex md:items-start md:gap-4">
-                        <Image src="/5-contact/icon 1.png" className='ml-42 md:ml-0' alt="Phone" width={60} height={40} />
+                        <Image src="/5-contact/icon 1.png" className='ml-35 md:ml-0' alt="Phone" width={60} height={40} />
                         <div className="text-xl sm:text-3xl">
                             <strong className="text-2xl sm:text-4xl">PHONE</strong><br />
                             (123) 456-7890
@@ -266,7 +268,7 @@ function ContactMap() {
                     </motion.div>
 
                     <motion.div {...getSectionAnim({ direction: "right", delay: 0.3 })} className="block text-center md:flex md:items-start md:gap-4">
-                        <Image src="/5-contact/icon 2.png" className='ml-42 md:ml-0' alt="Email" width={60} height={40} />
+                        <Image src="/5-contact/icon 2.png" className='ml-35 md:ml-0' alt="Email" width={60} height={40} />
                         <div className="text-xl sm:text-3xl">
                             <strong className="text-2xl sm:text-4xl">EMAIL</strong><br />
                             info@example.com
@@ -274,7 +276,7 @@ function ContactMap() {
                     </motion.div>
 
                     <motion.div {...getSectionAnim({ direction: "right", delay: 0.4 })} className="block text-center md:flex md:items-start md:gap-4">
-                        <Image src="/5-contact/icon 3.png" className='ml-42 md:ml-0' alt="Location" width={60} height={40} />
+                        <Image src="/5-contact/icon 3.png" className='ml-35 md:ml-0' alt="Location" width={60} height={40} />
                         <div className="text-xl sm:text-3xl">
                             <strong className="text-2xl sm:text-4xl">VISIT</strong><br />
                             1234 Burger Lane<br />
@@ -284,7 +286,7 @@ function ContactMap() {
                 </div>
 
                 {/* Right Column: Map */}
-                <motion.div {...getSectionAnim({ direction: "", delay: 0.5 })} className="w-full md:w-[2050px] h-64 sm:h-80 md:h-[550px] mr-55 rounded overflow-hidden">
+                <motion.div {...getSectionAnim({ direction: "", delay: 0.5 })} className="w-full md:w-full h-64 sm:h-80 md:h-[550px] mr-35 rounded overflow-hidden">
                     <iframe
                         src="https://www.google.com/maps?q=1234+Burger+Lane&output=embed"
                         className="w-full h-full rounded shadow"

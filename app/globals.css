@@ -1,6 +1,13 @@
 @import "tailwindcss";
 
 :root {
+  --button-bg: #E0542A;
+  --button-fg: #FFF4E8;
+  --button-bg-hover: #b44321;
+  --layout-bg: #FFF4E8;
+  --layout-fg: #000000;
+  --navbar-bg-scroll: #b44321; /* Scrolled background */
+  --navbar-fg-scroll: #FFF4E8; /* Scrolled foreground */
   --background: #FFF4E8;
   --foreground: #1B1B1B;
   --accent: #F75C1E;

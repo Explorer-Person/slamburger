@@ -1,9 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 import { useEffect, useState, Suspense } from 'react';
 import Image from 'next/image';
-import { getSectionAnim } from "../../animation-util";
+import { getSectionAnim } from "@/app/animation-util";
+import { addItemToBasket } from "@/app/util";
 import { motion } from "framer-motion";
-import { menuItems, nutritions, ingredients, MenuItem } from '../menu_items'; // Adjust the import path as necessary
+import { menuItems, nutritions, ingredients, MenuItem } from '@/app/menu/menu_items'; // Adjust the import path as necessary
 import { useSearchParams } from 'next/navigation';
 
 export default function chooseItem() {
@@ -39,7 +41,7 @@ function Item() {
 
     console.log('Item component rendered with item:', item);
     return (
-        <main className="w-full bg-[#FFF4E8] text-[--foreground] font-[var(--font-body)] px-6 md:px-12 py-20 mt-5">
+        <main className="w-full bg-[var(--background)] text-[var(--foreground)] font-[var(--font-body)] px-6 md:px-12 py-20 pt-5">
             <ClassicSlam item={item} />
             <NutritionSection item={item} />
         </main>
@@ -48,7 +50,7 @@ function Item() {
 
 function ClassicSlam({ item }: { item: MenuItem | null }) {
     return (
-        <section className="relative mt-25 w-full bg-[#FFF4E8] px-4 md:px-12 py-16 md:py-20 md:pb-45 overflow-hidden text-[--foreground] flex justify-center items-center">
+        <section className="relative w-full mt-40 w-full px-4 md:px-12 py-16 md:py-20 md:pb-45 overflow-hidden flex justify-center items-center">
             {/* Background Decoration */}
             <img
                 src="/3-item/arkaplan_yeni.png"
@@ -86,6 +88,7 @@ function ClassicSlam({ item }: { item: MenuItem | null }) {
                     {/* Order Button */}
                     <a
                         href="#"
+                        onClick={(e) => { addItemToBasket(item!); e.preventDefault(); }}
                         className="inline-block bg-red-500 text-white text-base md:text-xl font-bold px-6 py-3 rounded-full mt-4 hover:bg-red-600 transition"
                     >
                         ORDER NOW ON SLAMEXPRESS
@@ -106,7 +109,7 @@ function NutritionSection({ item }: { item: MenuItem | null }) {
     const itemIngredients = ingredients.find(i => i.name === item?.name);
 
     return (
-        <section className="w-full flex flex-col px-4 md:px-12 py-16 md:py-20 bg-[#FFF4E8] text-[--foreground]">
+        <section className="w-full flex flex-col px-4 md:px-12 py-16 md:py-20">
             {/* Section Heading */}
             <motion.h2 {...getSectionAnim({ direction: "", delay: 0.1 })} className="text-4xl md:text-6xl lg:text-9xl font-[Anton] mb-10  md:mb-12 text-center md:text-left md:ml-70">
                 NUTRITIONAL INFO <br /> & INGREDIENTS
@@ -176,3 +179,4 @@ function NutritionSection({ item }: { item: MenuItem | null }) {
 
     );
 }
+

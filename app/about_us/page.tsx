@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 import Image from 'next/image';
 import { getSectionAnim } from "../animation-util";
@@ -19,7 +20,7 @@ export default function AboutUs() {
 
 function AboutSlamburger() {
     return (
-        <section id="about-slamburger" className="w-full mt-35 max-w-[1600px] mx-auto md:px-8 py-20">
+        <section id="about-slamburger" className="w-full bg-[var(--background)] text-[var(--foreground)] pt-35 pb-20 mx-auto md:px-8">
             <div className="relative bg-[#FFF7EA] overflow-hidden py-16 md:py-24 md:px-16">
                 {/* Background image - preserved */}
                 <img
@@ -37,7 +38,7 @@ function AboutSlamburger() {
                         <p className="text-xl sm:text-2xl lg:text-3xl text-gray-800 mb-8">
                             Bold flavors. Real ingredients. Made to slam.
                         </p>
-                        <button className="bg-[#F44336] hover:bg-red-600 text-white font-semibold text-2xl px-10 py-5 rounded-xl transition">
+                        <button className="bg-[var(--button-bg)] hover:bg-[var(--button-bg-hover)] text-[var(--button-fg)] font-semibold text-2xl px-10 py-5 rounded-xl transition">
                             READ OUR STORY
                         </button>
                     </div>
@@ -62,15 +63,14 @@ function AboutSlamburger() {
 
 function OurStory() {
     return (
-        <section id="our-story" className="w-full max-w-[1600px] mx-auto px-2 md:px-8 py-20">
+        <section id="our-story" className="w-full bg-[var(--background)] text-[var(--foreground)] px-2 md:px-8 py-20">
             <div className="relative bg-[#FFF7EA] overflow-hidden py-20 px-2 md:px-16">
                 {/* Background image - preserved */}
-                <Image
+                <img
                     src="/4-about/2-story/hikaye_arkaplan.png"
                     alt="Decorative background"
-                    className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-                    fill
-                    priority
+                    className="hidden md:block md:absolute md:inset-0 md:pointer-events-none"
+                    
                 />
 
                 <div className="relative z-10 max-w-[1500px] mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-16 text-center md:text-left">
@@ -108,7 +108,7 @@ function WhatWeStandFor() {
     return (
         <section
             id="what-we-stand-for"
-            className="w-screen min-h-[700px] px-0 py-24 relative left-1/2 right-1/2 -mx-[50vw] max-w-none"
+            className="relative w-full bg-[var(--background)] text-[var(--foreground)] min-h-[700px] px-0 py-24 relative left-1/2 right-1/2  "
             style={{ transform: 'translateX(-50%)' }}
         >
             <div className="relative bg-[#FFF7EA] overflow-hidden py-24 px-2 sm:px-8">
@@ -178,7 +178,7 @@ function WhatWeStandFor() {
 
 function OurValues() {
     return (
-        <section id="our-values" className="w-full max-w-[1600px] mx-auto px-2 md:px-8 py-20">
+        <section id="our-values" className="w-full w-full bg-[var(--background)] text-[var(--foreground)] px-2 md:px-8 py-20">
             <div className="relative bg-[#FFF7EA] overflow-hidden py-24 px-2 md:px-16">
                 <div className="relative z-10 max-w-[1500px] mx-auto text-center">
                     <motion.h2 {...getSectionAnim({ direction: "", delay: 0.1 })} className="text-7xl sm:text-7xl lg:text-8xl font-[Anton] mb-16 text-black">
@@ -278,7 +278,7 @@ function OurTeam() {
     return (
         <section
             id="our-team"
-            className="w-screen min-h-[600px] px-0 py-20 relative left-1/2 right-1/2 -mx-[50vw] max-w-none"
+            className="relative w-full bg-[var(--background)] text-[var(--foreground)] min-h-[600px] px-0 py-20 relative left-1/2 right-1/2 "
             style={{ transform: "translateX(-50%)" }}
         >
             <div className="relative bg-[#FFF7EA] overflow-hidden py-16 px-2 md:px-8 lg:px-12">
@@ -377,7 +377,7 @@ function OurTeam() {
 
 function VisitUs() {
     return (
-        <section id='visit-us' className="w-full h-full max-w-8xl mx-auto px-6 py-6">
+        <section id='visit-us' className="relative w-full bg-[var(--background)] text-[var(--foreground)] mx-auto px-6 py-6">
             <div className="relative bg-[#FFF7EA] overflow-hidden py-16 px-6 sm:px-12 w-full min-h-[700px]">
                 {/* Decorative background */}
                 <img
@@ -396,7 +396,7 @@ function VisitUs() {
                         <p className="text-2xl text-gray-800 mb-8">
                             Experience our delicious handcrafted burgers and welcoming atmosphere in person.
                         </p>
-                        <button className="bg-[#F44336] hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg text-xl transition">
+                        <button className="bg-[var(--button-bg)] hover:bg-[var(--button-bg-hover)] text-[var(--button-fg)] font-semibold px-6 py-3 rounded-lg text-xl transition">
                             FIND A SLAMBURGER
                         </button>
                     </motion.div>
