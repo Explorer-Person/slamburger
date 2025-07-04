@@ -1,8 +1,7 @@
-
 import type { Metadata } from "next";
 import './globals.css';
-import {Header, Footer, BasketWidget} from './layout_items'
-
+import { ClientLayoutBackground, Header, Footer, BasketWidget } from './layout_items'
+import { AlertProvider } from "@/app/alert_util";
 
 export const metadata: Metadata = {
   title: 'SLAMBURGER',
@@ -26,7 +25,13 @@ export default function RootLayout({
         <Header />
         <BasketWidget />
         {/* Main content area */}
-        <main className="relative w-screen overflow-x-hidden">{children}</main>
+        <main className="relative w-screen overflow-x-hidden">
+          <AlertProvider>
+            <ClientLayoutBackground>
+              {children}
+            </ClientLayoutBackground>
+          </AlertProvider>
+        </main>
         <Footer />
       </body>
     </html>

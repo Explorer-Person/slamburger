@@ -10,7 +10,7 @@ export default function Home() {
 
 
   return (
-    <main className="flex flex-col items-center w-full bg-[--background] text-[--foreground] font-[var(--font-body)]">
+    <main className="flex flex-col items-center w-full font-[var(--font-body)]">
       <Hero />
       <SignatureDishes />
       <AboutUs />
@@ -27,18 +27,18 @@ function Hero() {
   return (
     <section
       id='hero'
-      className="w-full mt-35 bg-[var(--background)] text-[var(--foreground)] overflow-hidden"
+      className="w-full md:mt-10 overflow-hidden"
 
     >
       <div className="max-w-8xl mx-auto mt-15 px-4 md:px-6 py-16 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 items-center relative">
 
         {/* Left Text */}
-        <div className="space-y-8 relative bottom-10 md:bottom-40 z-10 text-center md:text-left px-2 md:px-0 md:pl-40">
+        <div className="space-y-8 relative bottom-10 md:bottom-20 z-10 text-center md:text-left px-2 md:px-0 md:pl-40">
           <motion.h1 {...getSectionAnim({ direction: "", delay: 0.1 })} className="text-7xl md:text-7xl lg:text-9xl font-[Anton] leading-tight tracking-wide">
             SLAM INTO <br /> FLAVOR!
           </motion.h1>
 
-          <motion.p {...getSectionAnim({ direction: "", delay: 0.15 })} className="text-xl md:text-5xl font-medium text-[--foreground]">
+          <motion.p {...getSectionAnim({ direction: "", delay: 0.15 })} className="text-xl md:text-4xl font-medium text-[--foreground]">
             Handcrafted Burgers <br /> & Crispy Wings
           </motion.p>
           <motion.a {...getSectionAnim({ direction: "", delay: 0.20 })}
@@ -75,16 +75,16 @@ function Hero() {
 
 function SignatureDishes() {
   return (
-    <section id='signature' className="relative w-full bg-[var(--background)] text-[var(--foreground)] px-4 md:px-12 py-16 md:py-20 overflow-hidden">
+    <section id='signature' className="relative w-full px-4 md:px-12 py-16 md:py-20 overflow-hidden">
       {/* Background squiggle image (position altered only on mobile) */}
       <img
         src="/1-landing/2-signature/signature_arkaplan.png"
         alt="Signature Section Background"
-        className="absolute bottom-0 left-0 w-[90px] md:w-auto -translate-x-4 md:translate-x-0 pointer-events-none"
+        className="absolute top-0 left-0 w-[90px] md:w-auto -translate-x-4 md:translate-x-0 pointer-events-none"
         style={{ maxWidth: '100%' }}
       />
 
-      <div className="max-w-8xl mx-auto relative z-10">
+      <div className="max-w-8xl mx-auto relative mt-10 z-10">
         {/* Heading */}
         <motion.h2 {...getSectionAnim({ direction: "up", delay: 0.2 })} className="text-7xl md:text-7xl lg:text-9xl font-[Anton] text-center mb-6 md:mb-20 relative">
           SLAM SIGNATURE DISHES
@@ -173,7 +173,7 @@ function AboutUs() {
     </>
   );
   return (
-    <section id='about' className="relative w-full bg-[var(--background)] text-[var(--foreground)] px-4 md:px-12 py-16 md:py-20 overflow-hidden">
+    <section id='about' className="relative w-full px-4 md:px-12 py-16 md:py-20 overflow-hidden">
       {/* Background squiggle */}
       <Image
         src="/1-landing/3-about/about_arkaplan.png"
@@ -191,7 +191,8 @@ function AboutUs() {
           className="
     px-4 md:px-0
     mt-8 md:mt-0
-    w-full md:w-200
+    w-full md:w-150
+    md:ml-20
     relative
   "
         >
@@ -208,7 +209,7 @@ function AboutUs() {
             {/* On md+ screens always show full text, on mobile show toggle */}
             <p className="
             text-base sm:text-lg md:text-2xl
-            font-semibold leading-relaxed
+            leading-relaxed
             text-[--foreground]
             text-justify md:text-left
             mt-4 md:mt-0
@@ -250,7 +251,7 @@ function AboutUs() {
           <Image
             src="/1-landing/3-about/about_resim.png"
             alt="Chef"
-            width={500}
+            width={400}
             height={500}
             className="w-full h-auto object-contain"
           />
@@ -264,12 +265,12 @@ function AboutUs() {
 
 function FeaturedItems() {
   return (
-    <section id='featured' className="relative w-full bg-[var(--background)] text-[var(--foreground)] px-0 md:px-6 py-16 md:py-20 overflow-hidden">
+    <section id='featured' className="relative w-full px-0 md:px-6 py-16 md:py-20 overflow-hidden">
       {/* Decorative Left Squiggle (unchanged) */}
       <img
         src="/1-landing/4-featured/featured_arkaplan.png"
         alt="Left squiggle"
-        className="absolute mx-20 mt-50"
+        className="hidden md:block absolute w-360 mx-5 top-175"
       />
 
       <div className="md:max-w-8xl md:mx-15 md:relative md:z-10">
@@ -373,7 +374,7 @@ function FeaturedItems() {
 
 function Gallery() {
   return (
-    <section id='gallery' className="relative w-full bg-[var(--background)] text-[var(--foreground)] px-4 md:px-12 py-16 md:py-20 overflow-hidden">
+    <section id='gallery' className="relative w-full px-4 md:px-12 py-16 md:py-20 overflow-hidden">
       {/* Background squiggle */}
       <img
         src="/1-landing/5-gallery/galeri_arkaplan.png"
@@ -398,13 +399,13 @@ function Gallery() {
               src="/1-landing/5-gallery/5-gallery_1.png"
               alt="Burger on Plate"
               {...getSectionAnim({ direction: "down", delay: 0.2 })}
-              className="rounded-xl object-cover w-full max-w-[600px] h-auto mx-auto"
+              className="rounded-xl object-cover w-full max-w-[400px] h-auto mx-auto"
             />
             <motion.img
               src="/1-landing/5-gallery/5-gallery_3_redo.png"
               alt="Salad"
               {...getSectionAnim({ direction: "right", delay: 0.2 })}
-              className="rounded-xl object-cover w-full max-w-[600px] h-auto mx-auto"
+              className="rounded-xl object-cover w-full max-w-[400px] h-auto mx-auto"
             />
           </div>
 
@@ -414,13 +415,13 @@ function Gallery() {
               src="/1-landing/5-gallery/5-gallery_2.png"
               alt="Wings"
               {...getSectionAnim({ direction: "left", delay: 0.2 })}
-              className="rounded-xl object-cover w-full max-w-[600px] h-auto mx-auto md:relative md:bottom-15 md:left-15"
+              className="rounded-xl object-cover w-full max-w-[400px] h-auto mx-auto md:relative md:bottom-15 md:left-15"
             />
             <motion.img
               src="/1-landing/5-gallery/5-gallery_4_redo.png"
               alt="Burger in Hands"
               {...getSectionAnim({ direction: "up", delay: 0.2 })}
-              className="rounded-xl object-cover w-full max-w-[600px] h-auto mx-auto md:relative md:bottom-20 md:right-20"
+              className="rounded-xl object-cover w-full max-w-[400px] h-auto mx-auto md:relative md:bottom-20 md:right-20"
             />
           </div>
         </div>
@@ -432,7 +433,7 @@ function Gallery() {
 
 function LocationAndHours() {
   return (
-    <section id='location' className="relative w-full bg-[var(--background)] text-[var(--foreground)] px-4 md:px-12 py-16 md:py-20 text-[--foreground]">
+    <section id='location' className="relative w-full px-4 md:px-12 py-16 md:py-20 text-[--foreground]">
       <div className="max-w-8xl md:mx-40 flex flex-col md:flex-row items-center md:items-start justify-between gap-10 md:gap-12">
 
         {/* Left Side - Text */}
@@ -473,12 +474,12 @@ function ContactUs() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
 
   return (
-    <section id='contact' className="relative w-full bg-[var(--background)] text-[var(--foreground)] md:px-12 py-16 md:py-20 overflow-hidden">
+    <section id='contact' className="relative w-full md:px-12 py-16 md:py-20 overflow-hidden">
       {/* Background Elements — UNTOUCHED */}
       <img
         src="/1-landing/7-contact/iletişim_arkaplan.png"
-        alt="Squiggle left"
-        className="hidden md:block absolute h-200 w-350 left-25 bottom-0"
+        alt="Squiggle left" 
+        className="hidden md:block absolute h-200 w-350 left-10 bottom-0"
       />
 
 
@@ -486,16 +487,16 @@ function ContactUs() {
         {/* Left Text */}
         <div className="space-y-9 text-center md:text-left px-2 md:px-0">
           <motion.h1 {...getSectionAnim({ direction: "", delay: 0.1 })} className="text-7xl md:text-7xl lg:text-9xl font-[Anton]">CONTACT US</motion.h1>
-          <motion.p {...getSectionAnim({ direction: "left", delay: 0.1 })} className="text-2xl md:text-5xl font-medium leading-relaxed">
+          <motion.p {...getSectionAnim({ direction: "left", delay: 0.1 })} className="text-2xl md:text-4xl font-medium leading-relaxed">
             Need to get in touch? <br /> We’d love to hear from you.
           </motion.p>
 
-          <motion.div {...getSectionAnim({ direction: "left", delay: 0.1 })} className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-2 md:gap-4 text-xl md:text-3xl">
+          <motion.div {...getSectionAnim({ direction: "left", delay: 0.1 })} className="flex flex-col font-bold md:font-bold md:flex-row items-center md:items-start justify-center md:justify-start gap-2 md:gap-4 text-xl md:text-3xl">
             <FaPhoneAlt />
             <span>(123) 456-7890</span>
           </motion.div>
 
-          <motion.div {...getSectionAnim({ direction: "left", delay: 0.1 })} className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-2 md:gap-4 text-xl md:text-3xl">
+          <motion.div {...getSectionAnim({ direction: "left", delay: 0.1 })} className="flex flex-col font-bold md:font-bold md:flex-row items-center md:items-start justify-center md:justify-start gap-2 md:gap-4 text-xl md:text-3xl">
             <FaEnvelope />
             <span>hello@slamburger.com</span>
           </motion.div>
@@ -517,7 +518,7 @@ function ContactUs() {
         </div>
 
         {/* Right Form */}
-        <motion.form {...getSectionAnim({ direction: "up", delay: 0.1 })} className="w-92  space-y-12 bg-white/5 rounded-xl border/50 shadow-md p-4 md:p-6 space-y-4 ">
+        <motion.form {...getSectionAnim({ direction: "up", delay: 0.1 })} className="w-full md:w-100 md:ml-25  space-y-12 bg-white/20 rounded-xl border/50 shadow-md p-4 md:p-6 space-y-4 ">
           <div>
             <label className="block mb-1 font-medium text-2xl text-left">Name</label>
             <input

@@ -5,11 +5,11 @@ import Image from "next/image";
 
 
 type MoreItemsSliderProps = {
-    items: MenuItem[];
+    moreItems: MenuItem[];
     onAddToBasket?: (item: MenuItem) => void;
 };
 
-export default function MoreItemsSlider({ items, onAddToBasket }: MoreItemsSliderProps) {
+export default function MoreItemsSlider({ moreItems, onAddToBasket }: MoreItemsSliderProps) {
     const scrollRef = useRef<HTMLDivElement>(null);
 
     // Scroll left/right helpers
@@ -44,7 +44,7 @@ export default function MoreItemsSlider({ items, onAddToBasket }: MoreItemsSlide
                     WebkitOverflowScrolling: "touch",
                 }}
             >
-                {items.map((item, idx) => (
+                {moreItems.map((item, idx) => (
                     <div
                         key={item.name + idx}
                         className="flex flex-col items-center justify-between flex-shrink-0 w-[260px] h-[410px] bg-white rounded-2xl shadow-md p-4

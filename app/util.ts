@@ -1,5 +1,15 @@
 import { MenuItem } from "@/app/menu/menu_items";
 
+export function setBasketSafely(newBasket: MenuItem[]) {
+    const oldStr = localStorage.getItem("basket");
+    const newStr = JSON.stringify(newBasket);
+    if (oldStr !== newStr) {
+        console.log("Writing to localStorage: basket changed.");
+        localStorage.setItem("basket", newStr);
+    } else {
+        console.log("No write: basket unchanged.");
+    }
+}
 
 export function deleteItem(itemName: string) {
     // Read basket from localStorage
@@ -10,10 +20,12 @@ export function deleteItem(itemName: string) {
     const updatedBasket = basket.filter(item => item.name !== itemName);
 
     // Save updated basket back to localStorage
-    localStorage.setItem('basket', JSON.stringify(updatedBasket));
+    setBasketSafely(updatedBasket)
 
     return updatedBasket;
 }
+
+
 
 export function addItemToBasket(item: MenuItem) {
     const pathname = window.location.pathname;
@@ -51,11 +63,9 @@ export function addItemToBasket(item: MenuItem) {
         console.log('Adding item to basket:', item);
     }
 
+    setBasketSafely(basket)
 
-
-    localStorage.setItem('basket', JSON.stringify(basket));
-
-    if(isBasketPage){
+    if (isBasketPage) {
         return basket;
     }
     location.href = '/basket'; // Redirect to basket page after adding item

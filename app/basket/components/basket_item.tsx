@@ -1,4 +1,5 @@
 import { MenuItemOption, MenuItem } from "@/app/menu/menu_items";
+import { setBasketSafely } from "@/app/util";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -42,7 +43,7 @@ export default function BasketItem({
                 : b
         );
 
-        localStorage.setItem("basket", JSON.stringify(updatedBasket));
+        setBasketSafely(updatedBasket)
     }, [quantity, options, item.name]);
 
     const handleOptionChange = (key: keyof MenuItemOption) => {

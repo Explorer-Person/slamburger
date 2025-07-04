@@ -1,6 +1,4 @@
-// app/menu/edit/[id]/page.tsx
 "use client";
-
 import Image from "next/image";
 import { useState, Suspense } from "react";
 import { useParams, useSearchParams } from "next/navigation";

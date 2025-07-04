@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Gallery() {
     return (
-        <main className="flex flex-col items-center w-full bg-[--background] text-[--foreground] font-[var(--font-body)]">
+        <main className="flex flex-col items-center w-full font-[var(--font-body)]">
             <GalleryMasonry />
             {/* Add any additional components or sections here */}
         </main>

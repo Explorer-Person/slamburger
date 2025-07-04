@@ -7,7 +7,21 @@ import { motion } from "framer-motion";
 import SlamBurgerLogo from './slamburger_logo';
 import { usePathname } from "next/navigation";
 
+export function ClientLayoutBackground({ children }: { children: React.ReactNode }) {
+    const pathname = usePathname();
 
+    useEffect(() => {
+    if (pathname.startsWith('/admin')) {
+        document.documentElement.style.setProperty('--layout-bg', 'var(--admin-bg)');
+    } else {
+        // Use the default you defined in CSS (sync these values!)
+        document.documentElement.style.setProperty('--layout-bg', '#f3ede6'); // <-- match your default
+    }
+}, [pathname]);
+
+
+    return <>{children}</>;
+}
 
 export function Header() {
     const pathname = usePathname();
@@ -30,7 +44,7 @@ export function BasketWidget() {
             const basketString = localStorage.getItem("basket");
             try {
                 const basket = basketString ? JSON.parse(basketString) : [];
-                setVisible(Array.isArray(basket) && basket.length > 0);
+                setVisible(Array.isArray(basket) && basket.length > 0 && pathname !== '/admin');
                 setCount(basket.length);
             } catch {
                 setVisible(false);
@@ -52,10 +66,10 @@ export function BasketWidget() {
             <Link
                 href={pathname === '/basket' ? '/menu' : '/basket'}
                 className={`
-                    group relative flex items-center gap-2 px-4 py-2 rounded-2xl
+                    group relative flex items-center gap-2 px-4 py-2 rounded-[3rem]
                     bg-[var(--background)] text-[var(--foreground)]
                     shadow-xl font-semibold transition
-                    border-2 border-transparent
+                    border-2 border-color-[var(--foreground)]
                     hover:scale-105 active:scale-95
                     hover:border-gradient-to-r hover:from-[#f64b36] hover:to-[#f6be36]
                     hover:shadow-[0_4px_24px_0_rgba(246,75,54,0.18)]
@@ -64,11 +78,6 @@ export function BasketWidget() {
                     after:opacity-0 after:transition-opacity after:duration-500
                     hover:after:opacity-100
                 `}
-                style={{
-                    borderImage: 'linear-gradient(90deg, #f64b36 0%, #f6be36 100%) 1',
-                    borderWidth: "2px",
-                    borderStyle: "solid",
-                }}
             >
                 <span className="relative">
                     <img src="/basket-icon.png" alt="Basket Icon" className={`${pathname === '/basket' ? 'hidden' : 'block'} w-8 h-8 drop-shadow-md`} />
@@ -177,9 +186,9 @@ export function ClientHeader() {
             shadow-md gap-x-4 md:gap-x-8 text-center md:text-left
             transition-colors duration-300
             ${scrolled
-                        ? "bg-[var(--layout-bg)]/70"
-                        : "bg-[var(--layout-bg)]"
-                    }
+                ? "bg-[var(--layout-bg)]/70"
+                : "bg-[var(--layout-bg)]"
+            }
         `}
         >
             <Link href="/" className="flex items-center gap-3 h-10" aria-label="Go to homepage">
@@ -269,7 +278,7 @@ export function Footer() {
     }
 
     return (
-        <footer className="px-10 pt-10 pb-6 mt-12 bg-[var(--background)] text-[var(--foreground)]">
+        <footer className="px-10 pt-10 pb-6 mt-12">
             {/* Top Row: Logo + Navigation */}
             <div className="flex flex-col md:flex-row justify-center items-center w-full gap-y-4">
                 <h2 className="text-5xl font-[Anton] tracking-wide mx-10">SLAMBURGER</h2>

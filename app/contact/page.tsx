@@ -1,5 +1,5 @@
+"use client";
 /* eslint-disable @next/next/no-img-element */
-'use client'
 import { useState } from 'react';
 import Image from 'next/image';
 import { getSectionAnim } from "../animation-util";
@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
     return (
-        <main className="bg-[var(--background)] text-[var(--foreground)] font-sans w-full overflow-hidden">
+        <main className="font-sans w-full overflow-hidden">
             <CallToAction />
             <ContactOptions />
             <MessageForm />
@@ -26,7 +26,7 @@ function CallToAction() {
             w-full
             md:mt-65 md:mb-75 md:py-25
             w-[100%] mx-auto px-4 sm:px-6
-            py-20  
+            pb-20  
         "
         >
             {/* Right: Image - absolutely positioned */}
@@ -35,10 +35,10 @@ function CallToAction() {
                 className="
                 w-full
                 absolute
-                max-w-[80%] sm:max-w-[400px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[900px]
-                top-80
+                max-w-[80%] sm:max-w-[400px] md:max-w-[700px] lg:max-w-[700px] xl:max-w-[700px]
+                top-35
                 mx-auto
-                lg:absolute lg:right-25 lg:55 lg:-translate-y-1/2
+                lg:absolute lg:right-25 lg:top-75 lg:-translate-y-1/2
                 translate-x-[5%] sm:translate-x-[12%] md:translate-x-0
                 sm:top-15 md:top-120
                 "
@@ -46,8 +46,8 @@ function CallToAction() {
                 <Image
                     src="/5-contact/1-cta.png"
                     alt="Burger with Phone"
-                    width={1200}
-                    height={1200}
+                    width={800}
+                    height={800}
                     className="w-full h-auto mx-5"
                     priority
                 />
@@ -58,13 +58,13 @@ function CallToAction() {
                 {...getSectionAnim({ direction: "", delay: 0.1 })}
                 className="
                         text-center
-                        md:ml-35 md:text-left max-xl z-10
-                mt-[150px] sm:mt-[280px] md:mt-0"
+                        md:ml-35 md:text-left max-xl
+                mt-[140px] md:relative md:bottom-85"
             >
-                <h2 className="text-7xl sm:text-7xl md:text-7xl lg:text-9xl mb-10 tracking-wide font-[Anton] mb-6">
+                <h2 className="text-7xl sm:text-7xl md:text-7xl lg:text-9xl mb-0 tracking-wide font-[Anton]">
                     GET IN <br /> TOUCH
                 </h2>
-                <p className="text-lg mt-85 mb-10 md:w-100 md:text-2xl md:mt-20">
+                <p className="text-lg mt-95 mb-10 md:w-125 md:text-2xl md:mt-10">
                     We’d love to hear from you—whether it’s feedback, franchise inquiries, or just to say hi.
                 </p>
                 <button className="bg-[var(--button-bg)] hover:bg-[var(--button-bg-hover)] text-[var(--button-fg)] font-semibold px-6 py-3 rounded-lg hover:bg-red-600 transition">
@@ -84,16 +84,17 @@ function ContactOptions() {
                 CONTACT US
             </motion.h2>
 
+            
+
+            <motion.p {...getSectionAnim({ direction: "", delay: 0.2 })} className="text-lg md:mt-15 md:text-3xl mb-10 md:mb-25">
+                Get in touch with us for any questions or concerns.
+            </motion.p>
             {/* Background Image (only shown on md+ for layout safety) */}
             <img
                 src="/5-contact/2-contact 1 bg.png"
                 alt="contact_bg"
-                className="sm:hidden md:block absolute md:h-full left-20 w-[200px] md:w-300 md:bottom-10 md:ml-65"
+                className="hidden md:block absolute md:h-full left-20 w-[250px] md:w-300 md:h-400 md:top-12 md:ml-35"
             />
-
-            <motion.p {...getSectionAnim({ direction: "", delay: 0.2 })} className="text-lg md:mt-45 md:text-3xl mb-10 md:mb-12">
-                Get in touch with us for any questions or concerns.
-            </motion.p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-20 sm:mx-25">
                 {/* CALL US */}
@@ -106,7 +107,7 @@ function ContactOptions() {
                         className="mx-auto mb-3"
                     />
                     <h3 className="text-2xl sm:text-4xl font-bold mb-1">CALL US</h3>
-                    <p className="text-base sm:text-xl">(123) 456-7890</p>
+                    <p className="text-base sm:text-xl sm:font-bold">(123) 456-7890</p>
                 </motion.div>
 
                 {/* EMAIL US */}
@@ -119,7 +120,7 @@ function ContactOptions() {
                         className="mx-auto mb-3"
                     />
                     <h3 className="text-2xl sm:text-4xl font-bold mb-1">EMAIL US</h3>
-                    <p className="text-base sm:text-xl">info@example.com</p>
+                    <p className="text-base sm:text-xl sm:font-bold">info@example.com</p>
                 </motion.div>
 
                 {/* VISIT US */}
@@ -132,7 +133,7 @@ function ContactOptions() {
                         className="mx-auto mb-3"
                     />
                     <h3 className="text-2xl sm:text-3xl font-bold mb-1">VISIT US</h3>
-                    <p className="text-base sm:text-xl">
+                    <p className="text-base sm:text-xl sm:font-bold">
                         1234 Burger St., Suite 567 <br />
                         Springfield, IL 62701
                     </p>
@@ -167,14 +168,14 @@ function MessageForm() {
             />
 
             {/* Left text section */}
-            <motion.div {...getSectionAnim({ direction: "", delay: 0.1 })} className="flex-1 w-full z-10 text-center md:text-left md:relative md:bottom-0 md:ml-35">
+            <motion.div {...getSectionAnim({ direction: "", delay: 0.1 })} className="flex-1 w-full z-10 text-center md:mt-15 md:text-left md:relative md:bottom-0 md:ml-35">
                 <h2
                     className="text-6xl md:ml-9 md:text-8xl md:text-start text-center font-[Anton] mb-4 tracking-widest"
                     style={{ letterSpacing: '0.1em', lineHeight: '1.4' }}
                 >
                     SEND US <br /> A MESSAGE
                 </h2>
-                <p className="text-xl md:ml-10 md:text-4xl">
+                <p className="text-xl md:ml-10 md:text-4xl mt-6">
                     Use the form to get in touch.
                 </p>
             </motion.div>
@@ -183,7 +184,7 @@ function MessageForm() {
             <motion.form
                 {...getSectionAnim({ direction: "left", delay: 0.2 })}
                 onSubmit={handleSubmit}
-                className="flex-1 w-full max-w-lg space-y-6 sm:space-y-8 sm:mr-45 z-10"
+                className="flex-1 w-full sm:w-75 space-y-6 sm:space-y-8 sm:mr-45 sm:mt-15 z-10"
             >
                 <div className="text-left">
                     <label className="block mb-1 text-base text-xl font-bold" htmlFor="name">
@@ -195,7 +196,7 @@ function MessageForm() {
                         value={form.name}
                         onChange={handleChange}
                         placeholder='Enter your name and surname'
-                        className="w-full p-3 border border-gray-300 rounded"
+                        className="w-full p-3 border border-gray-300 rounded-xl"
                     />
                 </div>
 
@@ -209,7 +210,7 @@ function MessageForm() {
                         value={form.email}
                         onChange={handleChange}
                         placeholder='sample@gmail.com'
-                        className="w-full p-3 border border-gray-300 rounded"
+                        className="w-full p-3 border border-gray-300 rounded-xl"
                     />
                 </div>
 
@@ -222,7 +223,7 @@ function MessageForm() {
                         value={form.message}
                         onChange={handleChange}
                         placeholder='Write your message here...'
-                        className="w-full p-3 border border-gray-300 rounded h-32"
+                        className="w-full p-3 border border-gray-300 rounded-xl h-32"
                     />
                 </div>
 
@@ -252,33 +253,33 @@ function ContactMap() {
             {/* Header */}
             <motion.div {...getSectionAnim({ direction: "", delay: 0.1 })} className="text-center mt-6 sm:mt-12 z-10">
                 <h2 className="text-7xl sm:text-6xl lg:text-9xl font-[Anton] mb-5">CONTACT US</h2>
-                <p className="text-2xl sm:text-2xl lg:text-5xl">Feel free to get in touch with us.</p>
+                <p className="text-2xl sm:text-2xl lg:text-4xl">Feel free to get in touch with us.</p>
             </motion.div>
 
             {/* Contact Info + Map */}
             <div className="flex flex-col md:flex-row items-start gap-10 mt-10 z-10">
                 {/* Left Column: Info */}
-                <div className="w-full md:w-200 space-y-10 md:ml-35">
-                    <motion.div {...getSectionAnim({ direction: "right", delay: 0.2 })} className="block text-center md:flex md:items-start md:gap-4">
+                <div className="w-full md:w-200 space-y-25 md:ml-35 md:relative">
+                    <motion.div {...getSectionAnim({ direction: "right", delay: 0.2 })} className="block text-center md:w[200px] md:flex md:items-start md:gap-4">
                         <Image src="/5-contact/icon 1.png" className='ml-35 md:ml-0' alt="Phone" width={60} height={40} />
-                        <div className="text-xl sm:text-3xl">
-                            <strong className="text-2xl sm:text-4xl">PHONE</strong><br />
+                        <div className="text-xl sm:text-2xl sm:absolute sm:right-0 sm:w-full">
+                            <strong className="text-2xl sm:text-3xl">PHONE</strong><br />
                             (123) 456-7890
                         </div>
                     </motion.div>
 
-                    <motion.div {...getSectionAnim({ direction: "right", delay: 0.3 })} className="block text-center md:flex md:items-start md:gap-4">
+                    <motion.div {...getSectionAnim({ direction: "right", delay: 0.3 })} className="block text-center md:w[200px] md:flex md:items-start md:gap-4">
                         <Image src="/5-contact/icon 2.png" className='ml-35 md:ml-0' alt="Email" width={60} height={40} />
-                        <div className="text-xl sm:text-3xl">
-                            <strong className="text-2xl sm:text-4xl">EMAIL</strong><br />
+                        <div className="text-xl sm:text-2xl sm:absolute sm:right-0 sm:w-full">
+                            <strong className="text-2xl sm:text-3xl">EMAIL</strong><br />
                             info@example.com
                         </div>
                     </motion.div>
 
-                    <motion.div {...getSectionAnim({ direction: "right", delay: 0.4 })} className="block text-center md:flex md:items-start md:gap-4">
+                    <motion.div {...getSectionAnim({ direction: "right", delay: 0.4 })} className="block text-center md:w[200px] md:flex md:items-start md:gap-4">
                         <Image src="/5-contact/icon 3.png" className='ml-35 md:ml-0' alt="Location" width={60} height={40} />
-                        <div className="text-xl sm:text-3xl">
-                            <strong className="text-2xl sm:text-4xl">VISIT</strong><br />
+                        <div className="text-xl sm:text-2xl sm:absolute sm:right-0 sm:w-full">
+                            <strong className="text-2xl sm:text-3xl">VISIT</strong><br />
                             1234 Burger Lane<br />
                             City, State 12345
                         </div>
