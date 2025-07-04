@@ -50,7 +50,7 @@ function Item() {
 
 function ClassicSlam({ item }: { item: MenuItem | null }) {
     return (
-        <section className="relative w-full mt-40 w-full px-4 md:px-12 py-16 md:py-20 md:pb-45 overflow-hidden flex justify-center items-center">
+        <section className="relative w-full mt-5 w-full px-4 md:px-12 py-16 md:py-20 md:mt-20 md:pb-45 overflow-hidden flex justify-center items-center">
             {/* Background Decoration */}
             <img
                 src="/3-item/arkaplan_yeni.png"
@@ -60,20 +60,20 @@ function ClassicSlam({ item }: { item: MenuItem | null }) {
 
             <div className="max-w-8xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-[55px] relative z-10">
                 {/* Burger Image */}
-                <motion.div {...getSectionAnim({ direction: "", delay: 0.1 })} className="w-full lg:w-auto max-w-[1200px]">
+                <motion.div {...getSectionAnim({ direction: "", delay: 0.1 })} className="w-full lg:w-auto max-w-[500px]">
                     <Image
                         src={item?.img || "/fallback.png"}
                         alt={item?.name || "Burger Image"}
-                        width={1200}
-                        height={800}
-                        className="w-full h-auto"
+                        width={500}
+                        height={500}
+                        className="h-auto"
                     />
                 </motion.div>
 
                 {/* Burger Content */}
                 <motion.div {...getSectionAnim({ direction: "up", delay: 0.1 })} className="text-center lg:text-left max-w-xl space-y-6 px-2 md:px-0">
 
-                    <h1 className="text-4xl md:text-5xl lg:text-9xl font-[Anton] leading-tight">
+                    <h1 className="text-4xl md:text-8xl font-[Anton] leading-tight">
                         {item?.name?.toUpperCase() || "ITEM NAME"}
                     </h1>
                     <p className="text-xl md:text-2xl font-medium text-gray-800">
@@ -109,23 +109,23 @@ function NutritionSection({ item }: { item: MenuItem | null }) {
     const itemIngredients = ingredients.find(i => i.name === item?.name);
 
     return (
-        <section className="w-full flex flex-col px-4 md:px-12 py-16 md:py-20">
+        <section className="w-full flex flex-col px-4 md:px-12 pt-16 md:py-20">
             {/* Section Heading */}
-            <motion.h2 {...getSectionAnim({ direction: "", delay: 0.1 })} className="text-4xl md:text-6xl lg:text-9xl font-[Anton] mb-10  md:mb-12 text-center md:text-left md:ml-70">
+            <motion.h2 {...getSectionAnim({ direction: "", delay: 0.1 })} className="text-4xl md:text-8xl font-[Anton] mb-10  md:mb-12 text-center md:text-left md:ml-70">
                 NUTRITIONAL INFO <br /> & INGREDIENTS
             </motion.h2>
 
             <motion.div {...getSectionAnim({ direction: "left", delay: 0.1 })} className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 {/* Left side: Text Info */}
                 <div className="space-y-6 text-center md:text-left px-2 md:px-0">
-                    <p className="text-xl md:text-3xl font-medium text-gray-800">
+                    <p className="text-xl md:text-2xl font-medium text-gray-800">
                         Here’s what goes into your burger.
                     </p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-6">
                         {/* Nutritional Values */}
                         <div>
-                            <h3 className="text-xl md:text-3xl font-bold mb-4">Nutritional Values</h3>
+                            <h3 className="text-xl md:text-2xl font-bold mb-4">Nutritional Values</h3>
                             <ul className="space-y-2 text-base md:text-xl">
                                 <li className="flex justify-between">
                                     <span className="text-orange-500">🔥 Calories</span>
@@ -152,7 +152,7 @@ function NutritionSection({ item }: { item: MenuItem | null }) {
 
                         {/* Ingredients */}
                         <div>
-                            <h3 className="text-xl md:text-3xl font-bold mb-4">Ingredients</h3>
+                            <h3 className="text-xl md:text-2xl font-bold mb-4">Ingredients</h3>
                             <ul className="space-y-2 text-base md:text-xl">
                                 {itemIngredients?.list?.length ? (
                                     itemIngredients.list.map((ing: string, i: number) => <li key={i}>{ing}</li>)
@@ -171,7 +171,7 @@ function NutritionSection({ item }: { item: MenuItem | null }) {
                         alt={item?.name || "Burger visual"}
                         width={800}
                         height={800}
-                        className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-sm h-auto object-contain"
+                        className="w-full max-w-[280px] md:max-w-[400px] h-auto object-contain"
                     />
                 </motion.div>
             </motion.div>

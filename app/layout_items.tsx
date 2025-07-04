@@ -15,7 +15,7 @@ export function ClientLayoutBackground({ children }: { children: React.ReactNode
         document.documentElement.style.setProperty('--layout-bg', 'var(--admin-bg)');
     } else {
         // Use the default you defined in CSS (sync these values!)
-        document.documentElement.style.setProperty('--layout-bg', '#f3ede6'); // <-- match your default
+        document.documentElement.style.setProperty('--layout-bg', '#fef6e3'); // <-- match your default
     }
 }, [pathname]);
 

@@ -2,14 +2,12 @@
 
 :root {
   --button-bg: #E0542A;
-  --button-fg: #FFF4E8;
+  --button-fg: #fef6e3;
   --button-bg-hover: #b44321;
-  --layout-bg: #FFF7EA;
+  --layout-bg: #fef6e3;
   --layout-fg: #000000;
-  --admin-bg: #FFF4E8;
-  --navbar-bg-scroll: #b44321; /* Scrolled background */
-  --navbar-fg-scroll: #FFF4E8; /* Scrolled foreground */
-  --background: #FFF4E8;
+  --admin-bg: #ffffff;
+  --background: #fef6e3;
   --foreground: #1B1B1B;
   --accent: #F75C1E;
   --accent-light: #F28A49;

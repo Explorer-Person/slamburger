@@ -6,7 +6,7 @@ export const menuItems = [
         desc: 'Juicy beef patty, crispy bacon, cheddar cheese, lettuce, tomato',
         img: '/2-menu/bacon.png',
         price: '$10.99',
-        imgW: 400,
+        imgW: 300,
         imgH: 240,
     },
     {
@@ -16,7 +16,7 @@ export const menuItems = [
         desc: 'Classic fried chicken drumsticks, seasoned to perfection',
         img: '/2-menu/close-up-fried-chicken-drumsticks.png',
         price: '$8.99',
-        imgW: 400,
+        imgW: 300,
         imgH: 240,
     },
     {
@@ -26,7 +26,7 @@ export const menuItems = [
         desc: 'Crispy fried chicken, lettuce, tomato, cheese, on a toasted bun',
         img: '/2-menu/crispy-chicken-burger-WEB-01.png',
         price: '$9.99',
-        imgW: 400,
+        imgW: 300,
         imgH: 240,
     },
     {
@@ -36,7 +36,7 @@ export const menuItems = [
         desc: 'Double beef patties, cheddar, lettuce, tomato, special sauce',
         img: '/2-menu/double_burger.png',
         price: '$11.99',
-        imgW: 400,
+        imgW: 300,
         imgH: 240,
     },
     {
@@ -46,7 +46,7 @@ export const menuItems = [
         desc: 'Golden fries tossed with garlic and truffle oil',
         img: '/2-menu/Extra-Cripy-Garlic-Truffle-Fries-1.png',
         price: '$5.99',
-        imgW: 400,
+        imgW: 300,
         imgH: 240,
     },
     {
@@ -56,7 +56,7 @@ export const menuItems = [
         desc: 'Classic French fries, crispy and golden',
         img: '/2-menu/fry.png',
         price: '$3.99',
-        imgW: 400,
+        imgW: 300,
         imgH: 240,
     },
     {
@@ -66,7 +66,7 @@ export const menuItems = [
         desc: 'Crispy chicken served with fries and dipping sauce',
         img: '/2-menu/fry_and_chicken.png',
         price: '$10.99',
-        imgW: 400,
+        imgW: 300,
         imgH: 240,
     },
     {
@@ -76,8 +76,8 @@ export const menuItems = [
         desc: 'Ice-cold glass of Coke',
         img: '/2-menu/glass-with-coke.png',
         price: '$2.49',
-        imgW: 400,
-        imgH: 240,
+        imgW: 300,  
+        imgH: 300,   
     },
     {
         id: 9,
@@ -86,7 +86,7 @@ export const menuItems = [
         desc: 'Spicy beef patty, jalapeños, cheese, hot sauce',
         img: '/2-menu/hot_burger.png',
         price: '$10.49',
-        imgW: 400,
+        imgW: 300,
         imgH: 240,
     },
     {
@@ -96,7 +96,7 @@ export const menuItems = [
         desc: 'Massive burger stacked with fried meat and veggies',
         img: '/2-menu/huge-burger-with-fried-meat-vegetables.png',
         price: '$12.99',
-        imgW: 400,
+        imgW: 300,
         imgH: 240,
     },
     {
@@ -106,7 +106,7 @@ export const menuItems = [
         desc: 'Classic beef patty, lettuce, tomato, onion, cheese',
         img: '/2-menu/klasik.png',
         price: '$8.99',
-        imgW: 400,
+        imgW: 300,
         imgH: 240,
     },
     {
@@ -116,7 +116,7 @@ export const menuItems = [
         desc: 'Traditional classic burger with all the fixings',
         img: '/2-menu/klasikburger.png',
         price: '$8.99',
-        imgW: 400,
+        imgW: 300,
         imgH: 240,
     },
     {
@@ -126,7 +126,7 @@ export const menuItems = [
         desc: 'Beef patty with spicy sauce, jalapeños, and cheese',
         img: '/2-menu/spicy.png',
         price: '$9.49',
-        imgW: 400,
+        imgW: 300,
         imgH: 240,
     },
     {
@@ -136,7 +136,7 @@ export const menuItems = [
         desc: 'Southern-style burger with fried chicken, pickles, and sauce',
         img: '/2-menu/ultimate-southern-burger.png',
         price: '$12.49',
-        imgW: 400,
+        imgW: 300,
         imgH: 240,
     },
     {
@@ -146,7 +146,7 @@ export const menuItems = [
         desc: 'Plant-based patty, lettuce, tomato, onions, pickles',
         img: '/2-menu/veggie.png',
         price: '$8.49',
-        imgW: 400,
+        imgW: 300,
         imgH: 240,
     },
     {
@@ -477,8 +477,8 @@ export interface MenuItem {
 }
 
 export interface MenuItemOption {
-        noOnion?: boolean;
-        extraCheese?: boolean;
-        addPickles?: boolean;
-        makeMeal?: boolean;
-    };
+    noOnion?: boolean;
+    extraCheese?: boolean;
+    addPickles?: boolean;
+    makeMeal?: boolean;
+};

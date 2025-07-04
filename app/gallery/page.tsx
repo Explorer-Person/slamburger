@@ -35,11 +35,11 @@ const galleryItems = [
 function GalleryMasonry() {
     const randomHeights = [630, 670, 730, 600, 690, 660, 740, 610, 710, 650, 680, 635, 720, 670];
     return (
-        <section className="min-h-screen w-full mt-45 py-16 px-2 md:px-8 md:mt-25 flex flex-col items-center">
+        <section className="min-h-screen w-full mt-25 py-16 px-2 md:px-8 md:mt-25 flex flex-col items-center">
             <div className="w-[90vw] max-w-8xl mx-auto">
                 <motion.h1
                     {...getSectionAnim({ direction: "", delay: 0.1 })}
-                    className="text-4xl md:text-7xl font-[Anton] text-center text-[#222] mb-8 tracking-tight"
+                    className="text-4xl md:text-8xl font-[Anton] text-center text-[#222] mb-8 tracking-tight"
                 >
                     GALLERY
                 </motion.h1>
