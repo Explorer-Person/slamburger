@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
     return (
-        <main className="font-sans w-full overflow-hidden">
+        <main className="font-sans md:pt-95 md:pb-45 w-full space-y-25 md:space-y-45 overflow-hidden">
             <CallToAction />
             <ContactOptions />
             <MessageForm />
@@ -24,7 +24,7 @@ function CallToAction() {
             className="
             relative
             w-full
-            md:mt-65 md:mb-0 md:pt-25
+            md:mb-0
             w-[100%] md:w-[%50] mx-auto px-4  
         "
         >
@@ -35,11 +35,10 @@ function CallToAction() {
                 w-full
                 absolute
                 max-w-[80%] md:max-w-[500px]
-                top-35
                 mx-auto
+                mt-35
                 md:absolute md:right-75 lg:-translate-y-1/2
-                translate-x-[5%] sm:translate-x-[12%] md:translate-x-0
-                sm:top-15 md:top-45
+                translate-x-[5%] md:translate-x-0
                 "
             >
                 <Image
@@ -78,24 +77,29 @@ function CallToAction() {
 
 function ContactOptions() {
     return (
-        <section className="relative w-full px-4 md:px-6 top-20 md:mb-45 text-center">
-            <motion.h2 {...getSectionAnim({ direction: "", delay: 0.1 })} className="text-7xl md:text-8xl font-[Anton] mb-6 sm:mb-10">
-                CONTACT US
-            </motion.h2>
-
-
-
-            <motion.p {...getSectionAnim({ direction: "", delay: 0.2 })} className="text-lg md:mt-15 md:text-3xl mb-10 md:mb-25">
-                Get in touch with us for any questions or concerns.
-            </motion.p>
+        <section className="relative w-full px-4 md:px-6 text-center">
             {/* Background Image (only shown on md+ for layout safety) */}
-            <img
-                src="/5-contact/2-contact 1 bg.png"
-                alt="contact_bg"
-                className="hidden md:block absolute md:h-full left-20 w-[250px] md:w-300 md:h-400 md:top-12 md:ml-35"
-            />
+            <div className='hidden md:block md:h-full md:w-full md:absolute md:bottom-35'>
+                <img
+                    src="/5-contact/2-contact 1 bg.png"
+                    alt="contact_bg"
+                    className="w-[250px] md:w-300 md:ml-35"
+                />
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-20 md:mx-25 md:relative md:top-10">
+            <div className='md:mb-25'>
+                <motion.h2 {...getSectionAnim({ direction: "", delay: 0.1 })} className="text-7xl md:text-8xl font-[Anton] mb-6 md:mb-10 ">
+                    CONTACT US
+                </motion.h2>
+
+                <motion.p {...getSectionAnim({ direction: "", delay: 0.2 })} className="text-lg  md:mt-15 md:text-3xl mb-10 md:mb-10">
+                    Get in touch with us for any questions or concerns.
+                </motion.p>
+            </div>
+
+
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-20 md:mx-25">
                 {/* CALL US */}
                 <motion.div
                     {...getSectionAnim({ direction: "up", delay: 0.1 })}
@@ -196,13 +200,16 @@ function MessageForm() {
     };
 
     return (
-        <section className="relative w-full text-center px-4 sm:px-6 top-35 flex flex-col md:flex-row items-start gap-12">
+        <section className="relative w-full text-center  px-4 md:px-6 flex flex-col md:flex-row items-start gap-12">
             {/* Background squiggle decoration - only on md+ */}
-            <img
-                src="/5-contact/3-message.png"
-                alt="message_bg"
-                className="hidden md:block absolute right-10 top-0 w-full h-auto z-0 pointer-events-none"
-            />
+            <div className='hidden md:block absolute h-full w-350 bottom-35 right-25'>
+                <img
+                    src="/5-contact/3-message.png"
+                    alt="message_bg"
+                    className=" w-full pointer-events-none"
+                />
+            </div>
+
 
             {/* Left text section */}
             <motion.div {...getSectionAnim({ direction: "", delay: 0.1 })} className="flex-1 w-full z-10 text-center md:mt-15 md:text-left md:relative md:bottom-0 md:ml-35">
@@ -279,13 +286,16 @@ function MessageForm() {
 
 function ContactMap() {
     return (
-        <section className="relative w-full top-50 pb-16 px-4 sm:px-0  grid grid-cols-1 items-start gap-12 overflow-hidden">
+        <section className="relative w-full px-4 md:px-0 md:h-200  grid grid-cols-1 items-start gap-12 overflow-hidden">
             {/* Background image - hidden on mobile */}
-            <img
-                src="/5-contact/4-contact_2.png"
-                className="hidden md:block absolute w-350 h-full top-20 left-25"
-                alt="contact_bg_png"
-            />
+            <div className='hidden md:block md:absolute md:w-full md:top-5 md:left-65'>
+                <img
+                    src="/5-contact/4-contact_2.png"
+                    className='w-300'
+                    alt="contact_bg_png"
+                />
+            </div>
+
 
             {/* Header */}
             <motion.div {...getSectionAnim({ direction: "", delay: 0.1 })} className="text-center mt-6 sm:mt-12 z-10">

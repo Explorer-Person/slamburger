@@ -37,7 +37,7 @@ export default function OrdersPage() {
     );
 
     return (
-        <section className="w-full min-h-screen flex items-center justify-center bg-[var(--background)]">
+        <section className="w-full flex items-center justify-center bg-[var(--background)] my-12 mt-30">
             <div className="w-[350px] md:w-[370px] bg-[#FFF8EC] rounded-2xl p-6 shadow-2xl">
                 <h2 className="text-5xl font-[Anton] text-center mb-4 tracking-wide">YOUR ORDERS</h2>
                 <div className="flex flex-col gap-5 mb-4">

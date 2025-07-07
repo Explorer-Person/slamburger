@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function AboutUs() {
     return (
-        <main className="flex flex-col items-center w-full font-[var(--font-body)]">
+        <main className="flex flex-col space-y-12 md:space-y-35 items-center w-full font-[var(--font-body)]">
             <AboutSlamburger />
             <OurStory />
             <WhatWeStandFor />
@@ -21,17 +21,17 @@ export default function AboutUs() {
 function AboutSlamburger() {
     return (
         <section id="about-slamburger" className="w-full pt-25 mx-auto md:px-8">
-            <div className="relative overflow-hidden md:py-24 md:px-16">
+            <div className="relative overflow-hidden md:pt-30 md:px-16">
                 {/* Background image - preserved */}
                 <img
                     src="/4-about/1-about/arkaplan.png"
                     alt="Decorative background"
-                    className="absolute top-0 left-0 w-[700px] md:w-[1600px] pointer-events-none"
+                    className="hidden md:block md:absolute md:left-25 md:bottom-0 md:w-[700px] md:w-[1200px] pointer-events-none"
                 />
 
                 <motion.div {...getSectionAnim({ direction: "", delay: 0.1 })} className="relative z-10 max-w-[1400px] mx-auto flex flex-col-reverse md:flex-row md:w-[%50] md:mx-25 items-center justify-between gap-16 text-center md:text-left">
                     {/* Left: Text content */}
-                    <div className="max-w-2xl mb-25 md:ml-15">
+                    <div className="max-w-2xl mb-15 md:mb-50 md:ml-15">
                         <h2 className="text-6xl md:text-8xl lg:tracking-wide font-[Anton] text-black tracking-wide leading-tight mb-8">
                             ABOUT <span className="block">SLAMBURGER</span>
                         </h2>
@@ -44,7 +44,7 @@ function AboutSlamburger() {
                     </div>
 
                     {/* Right: Chef Image */}
-                    <div className="w-full max-w-[600px] md:max-w-[800px] md:mb-35">
+                    <div className="w-full md:block md:max-w-[500px] md:relative md:bottom-15">
                         <Image
                             src="/4-about/1-about/1-about_1.png"
                             alt="Chef holding burger"
@@ -63,7 +63,7 @@ function AboutSlamburger() {
 
 function OurStory() {
     return (
-        <section id="our-story" className="w-full px-2 md:px-8 md:py-20">
+        <section id="our-story" className="w-full px-2 md:px-8">
             <div className="relative overflow-hidden md:py-20 px-2 md:px-16">
                 {/* Background image - preserved */}
                 <img
@@ -108,15 +108,15 @@ function WhatWeStandFor() {
     return (
         <section
             id="what-we-stand-for"
-            className="relative w-full min-h-[900px] px-0 md:pt-24 left-1/2 right-1/2  "
+            className="relative w-full px-0 md:pt-5 left-1/2 right-1/2  "
             style={{ transform: 'translateX(-50%)' }}
         >
-            <div className="relative min-h-[900px] overflow-hidden py-12 px-2 sm:px-8">
+            <div className="relative overflow-hidden px-2 pb-5 sm:pb-45 sm:px-8">
                 {/* Background shapes (untouched) */}
                 <img
                     src="/4-about/3-features/3-features_bg_shapes.png"
                     alt="Background shapes"
-                    className="absolute top-155 w-full w-100"
+                    className="hidden md:block md:absolute md:bottom-0 md:w-250"
                 />
 
                 <div className="relative z-10 max-w-[1400px] mx-auto text-center">
@@ -187,7 +187,7 @@ function WhatWeStandFor() {
 
 function OurValues() {
     return (
-        <section id="our-values" className="w-full px-2 md:px-8 pt-8">
+        <section id="our-values" className="w-full px-2 md:px-8 ">
             <div className="relative overflow-hidden px-2 md:px-12">
                 <div className="relative z-10 max-w-[1200px] mx-auto text-center">
                     <motion.h2
@@ -306,15 +306,15 @@ function OurTeam() {
     return (
         <section
             id="our-team"
-            className="relative w-full min-h-[500px] px-0 md:pt-16 left-1/2 right-1/2"
+            className="relative w-full min-h-[500px] px-0 left-1/2 right-1/2"
             style={{ transform: "translateX(-50%)" }}
         >
-            <div className="relative overflow-hidden py-12 px-2 md:px-6">
+            <div className="relative overflow-hidden px-2 md:px-6">
                 {/* Decorative background */}
                 <img
                     src="/4-about/5-team/5-team_bg_shapes.png"
                     alt="Background decoration"
-                    className="absolute left-0 w-200 mx-8 pointer-events-none"
+                    className="hidden md:block absolute left-0 w-315 left-25 mx-8 pointer-events-none"
                 />
 
                 {/* EXPANDED CONTAINER */}
@@ -421,13 +421,13 @@ function OurTeam() {
 
 function VisitUs() {
     return (
-        <section id='visit-us' className="relative overflow-hidden w-full h-175 md:h-[500px] md:mt-15 mx-auto px-4 ">
-            <div className="relative overflow-hidden py-28 px-4 md:px-10 w-full h-[850px] md:h-[800px]">
+        <section id='visit-us' className="relative overflow-hidden w-full h-150 md:h-[500px] mx-auto px-4 ">
+            <div className="relative overflow-hidden px-4 md:px-10 md:py-25 h-[500px]">
                 {/* Decorative background */}
                 <img
                     src="/4-about/6-visit/bg_shapes.png"
                     alt="Decorative background"
-                    className="absolute w-240 left-3 bottom-0 pointer-events-none"
+                    className="hidden md:block absolute w-[1100px] top-0 mb-25 left-70 pointer-events-none"
                 />
 
                 <div className="relative z-10 max-w-5xl mx-auto flex flex-col-reverse md:flex-row md:bottom-10 items-center justify-between gap-8">
