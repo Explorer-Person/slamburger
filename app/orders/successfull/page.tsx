@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function SuccessfullOrderPage() {
     return (
-        <section className="w-full min-h-screen pt-20 flex items-center justify-center bg-[#FFF8EC]">
+        <section className="w-full min-h-screen pt-20 flex items-center justify-center">
             <div className="w-[350px] md:w-[370px] bg-[#FFF8EC] rounded-2xl p-8 shadow-2xl flex flex-col items-center">
                 {/* Star Icon */}
                 <img src="/star.png" className="w-50" alt="" />

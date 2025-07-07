@@ -4,7 +4,7 @@ import './globals.css';
 import React, { useState, useEffect } from 'react';
 import { getSectionAnim } from "./animation-util";
 import { motion } from "framer-motion";
-import SlamBurgerLogo from './slamburger_logo';
+// import SlamBurgerLogo from './slamburger_logo';
 import { usePathname } from "next/navigation";
 
 export function ClientLayoutBackground({ children }: { children: React.ReactNode }) {
@@ -192,7 +192,7 @@ export function ClientHeader() {
         `}
         >
             <Link href="/" className="flex items-center gap-3 h-10" aria-label="Go to homepage">
-                <SlamBurgerLogo />
+                {/* <SlamBurgerLogo /> */}
                 <h1 className="text-2xl md:text-4xl font-[Anton] text-[--foreground] tracking-wide cursor-pointer">
                     SLAMBURGER
                 </h1>

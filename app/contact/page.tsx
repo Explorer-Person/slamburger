@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
     return (
-        <main className="font-sans md:pt-95 md:pb-45 w-full space-y-25 md:space-y-45 overflow-hidden">
+        <main className="font-sans md:pt-95 md:pb-10 w-full space-y-25 md:space-y-45 overflow-hidden">
             <CallToAction />
             <ContactOptions />
             <MessageForm />
@@ -37,7 +37,8 @@ function CallToAction() {
                 max-w-[80%] md:max-w-[500px]
                 mx-auto
                 mt-35
-                md:absolute md:right-75 lg:-translate-y-1/2
+                md:mt-0
+                md:absolute md:bottom-40 md:right-75
                 translate-x-[5%] md:translate-x-0
                 "
             >
@@ -46,7 +47,7 @@ function CallToAction() {
                     alt="Burger with Phone"
                     width={800}
                     height={800}
-                    className="h-auto mx-5"
+                    className="mx-5"
                     priority
                 />
             </motion.div>
@@ -57,7 +58,7 @@ function CallToAction() {
                 className="
                         text-center
                         md:ml-55 md:text-left max-xl
-                mt-[140px] md:relative md:bottom-90"
+                mt-[140px] md:relative md:bottom-70"
             >
                 <h2 className="text-7xl md:text-8xl mb-0 tracking-wide font-[Anton]">
                     GET IN <br /> TOUCH
