@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Gallery() {
     return (
-        <main className="flex flex-col items-center w-full font-[var(--font-body)]">
+        <main className="flex flex-col items-center md:w-[100%] pt-25 md:pt-35 md:relative space-y-20 md:space-y-35 font-[var(--font-body)]">
             <GalleryMasonry />
             {/* Add any additional components or sections here */}
         </main>
@@ -35,11 +35,11 @@ const galleryItems = [
 function GalleryMasonry() {
     const randomHeights = [630, 670, 730, 600, 690, 660, 740, 610, 710, 650, 680, 635, 720, 670];
     return (
-        <section className="min-h-screen w-full mt-25 py-16 px-2 md:px-8 md:mt-25 flex flex-col items-center">
-            <div className="w-[90vw] max-w-8xl mx-auto">
+        <section className="min-h-screen relative w-[100%]">
+            <div className="mx-auto">
                 <motion.h1
                     {...getSectionAnim({ direction: "", delay: 0.1 })}
-                    className="text-4xl md:text-8xl font-[Anton] text-center text-[#222] mb-8 tracking-tight"
+                    className="text-6xl md:text-8xl font-[Anton] text-center text-[#222] mb-8 tracking-tight"
                 >
                     GALLERY
                 </motion.h1>
@@ -49,7 +49,7 @@ function GalleryMasonry() {
                 >
                     Feast your eyes on our signature SlamBurger creations, crispy wings, and all-star sides!
                 </motion.p>
-                <div className="columns-1 md:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
+                <div className="w-[90%] mx-[5%] columns-1 md:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
                     {galleryItems.map((item, i) => (
                         <motion.div
                             {...getSectionAnim({ direction: "", delay: 0.2 + i * 0.03 })}

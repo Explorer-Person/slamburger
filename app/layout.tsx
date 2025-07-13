@@ -21,7 +21,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body >
+      <body>
         <Header />
         <BasketWidget />
         {/* Main content area */}

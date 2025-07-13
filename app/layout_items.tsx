@@ -180,17 +180,17 @@ export function ClientHeader() {
 
     return (
         <header className={`
-            fixed flex top-0 left-0 w-full z-50
-            flex-row items-center justify-between
-            px-4 md:px-10 py-4 md:py-8
-            shadow-md gap-x-4 md:gap-x-8 text-center md:text-left
-            transition-colors duration-300
-            ${scrolled
-                ? "bg-[var(--layout-bg)]/70"
-                : "bg-[var(--layout-bg)]"
-            }
-        `}
-        >
+        fixed flex top-0 left-0 w-full z-50
+        flex-row items-center justify-between
+        px-4 md:px-10 py-4 md:py-8
+        shadow-md gap-x-4 md:gap-x-8 text-center md:text-left
+        transition-colors duration-300
+        backdrop-blur
+        ${scrolled
+            ? "bg-[var(--layout-bg)]/80"
+            : "bg-[var(--layout-bg)]"
+        }
+        `}>
             <Link href="/" className="flex items-center gap-3 h-10" aria-label="Go to homepage">
                 {/* <SlamBurgerLogo /> */}
                 <h1 className="text-2xl md:text-4xl font-[Anton] text-[--foreground] tracking-wide cursor-pointer">
@@ -229,13 +229,13 @@ export function ClientHeader() {
             absolute top-full left-0 w-full bg-[#FFF4E8] shadow-lg transition-all duration-200
             ${mobileNavOpen ? "block" : "hidden"}
             ${scrolled
-                        ? "bg-[var(--layout-bg)]/70 text-[var(--layout-fg)]"
+                        ? "bg-[var(--layout-bg)]/80 text-[var(--layout-fg)]"
                         : "bg-[var(--layout-bg)] text-[var(--layout-fg)]"
                     }
 
         `}
             >
-                <nav className={`flex flex-col gap-y-2 py-4 px-2 text-base font-semibold uppercase`}>
+                <nav className="flex flex-col gap-y-2 py-4 px-2 text-base font-semibold uppercase">
                     <a
                         href="/menu"
                         className="hover:text-[--accent] py-2 active:scale-95 transition-transform"

@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
     return (
-        <main className="font-sans md:pt-95 md:pb-10 w-full space-y-25 md:space-y-45 overflow-hidden">
+        <main className="flex flex-col items-center md:w-[100%] pt-25 md:pt-35 md:relative space-y-20 md:space-y-35 font-[var(--font-body)] md:overflow-hidden">
             <CallToAction />
             <ContactOptions />
             <MessageForm />
@@ -23,53 +23,39 @@ function CallToAction() {
         <section
             className="
             relative
-            w-full
-            md:mb-0
-            w-[100%] md:w-[%50] mx-auto px-4  
+            w-[100%] 
         "
         >
-            {/* Right: Image - absolutely positioned */}
-            <motion.div
-                {...getSectionAnim({ direction: "", delay: 0.2 })}
-                className="
-                w-full
-                absolute
-                max-w-[80%] md:max-w-[500px]
-                mx-auto
-                mt-35
-                md:mt-0
-                md:absolute md:bottom-40 md:right-75
-                translate-x-[5%] md:translate-x-0
-                "
-            >
-                <Image
-                    src="/5-contact/1-cta.png"
-                    alt="Burger with Phone"
-                    width={800}
-                    height={800}
-                    className="mx-5"
-                    priority
-                />
-            </motion.div>
+            <div className='flex flex-col md:flex-row items-center text-center md:text-start justify-center w-[90%] mx-[5%] md:w-[80%] md:mx-[10%]'>
 
-            {/* Left: Text content */}
-            <motion.div
-                {...getSectionAnim({ direction: "", delay: 0.1 })}
-                className="
-                        text-center
-                        md:ml-55 md:text-left max-xl
-                mt-[140px] md:relative md:bottom-70"
-            >
-                <h2 className="text-7xl md:text-8xl mb-0 tracking-wide font-[Anton]">
-                    GET IN <br /> TOUCH
-                </h2>
-                <p className="text-lg mt-95 mb-10 md:w-125 md:text-2xl md:mt-10">
-                    We’d love to hear from you—whether it’s feedback, franchise inquiries, or just to say hi.
-                </p>
-                <button className="bg-[var(--button-bg)] hover:bg-[var(--button-bg-hover)] text-[var(--button-fg)] font-semibold px-6 py-3 rounded-lg hover:bg-red-600 transition">
-                    CONTACT US
-                </button>
-            </motion.div>
+                {/* Left: Text content */}
+                <motion.div
+                    {...getSectionAnim({ direction: "", delay: 0.1 })}
+                >
+                    <h2 className="text-6xl md:text-8xl mb-0 tracking-wide font-[Anton]">
+                        GET IN <br /> TOUCH
+                    </h2>
+                    <p className="text-lg mb-10 md:text-2xl md:mt-10">
+                        We’d love to hear from you—whether it’s feedback, franchise inquiries, or just to say hi.
+                    </p>
+                    <button className="bg-[var(--button-bg)] hover:bg-[var(--button-bg-hover)] text-[var(--button-fg)] font-semibold px-6 py-3 rounded-lg hover:bg-red-600 transition">
+                        CONTACT US
+                    </button>
+                </motion.div>
+                {/* Right: Image - absolutely positioned */}
+                <motion.div
+                    {...getSectionAnim({ direction: "", delay: 0.2 })}
+                >
+                    <Image
+                        src="/5-contact/1-cta.png"
+                        alt="Burger with Phone"
+                        width={800}
+                        height={800}
+                        priority
+                    />
+                </motion.div>
+            </div>
+
         </section>
 
 
@@ -78,7 +64,8 @@ function CallToAction() {
 
 function ContactOptions() {
     return (
-        <section className="relative w-full px-4 md:px-6 text-center">
+        <section className="relative
+            w-[100%] ">
             {/* Background Image (only shown on md+ for layout safety) */}
             <div className='hidden md:block md:h-full md:w-full md:absolute md:bottom-35'>
                 <img
@@ -88,36 +75,36 @@ function ContactOptions() {
                 />
             </div>
 
-            <div className='md:mb-25'>
-                <motion.h2 {...getSectionAnim({ direction: "", delay: 0.1 })} className="text-7xl md:text-8xl font-[Anton] mb-6 md:mb-10 ">
+            <div className='text-center mb-15'>
+                <motion.h2 {...getSectionAnim({ direction: "", delay: 0.1 })} className="text-6xl md:text-8xl font-[Anton]">
                     CONTACT US
                 </motion.h2>
 
-                <motion.p {...getSectionAnim({ direction: "", delay: 0.2 })} className="text-lg  md:mt-15 md:text-3xl mb-10 md:mb-10">
+                <motion.p {...getSectionAnim({ direction: "", delay: 0.2 })} className="text-lg  md:mt-15 md:text-3xl">
                     Get in touch with us for any questions or concerns.
                 </motion.p>
             </div>
 
 
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-20 md:mx-25">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-10 w-[90%] mx-[5%] md:w-[80%] md:mx-[10%]">
                 {/* CALL US */}
                 <motion.div
                     {...getSectionAnim({ direction: "up", delay: 0.1 })}
                     className="
-                    bg-white/30 p-5 md:p-6 rounded-lg shadow text-center 
-                    flex flex-col items-center 
-                    min-h-[210px] md:min-h-[250px]
+                    bg-white/30 p-5 rounded-lg shadow text-center 
+                    w-[100%]
+                    h-[250px]
                     "
                 >
                     <Image
                         src="/5-contact/icon 1.png"
                         alt="Phone icon"
-                        width={56}
+                        width={46}
                         height={36}
                         className="mx-auto mb-3"
                     />
-                    <div className="flex-1 w-full flex flex-col items-center md:absolute md:bottom-10">
+                    <div className="">
                         {/* Use min-h to pin headings, mb to space title and text */}
                         <h3 className="text-2xl md:text-3xl font-bold mb-2 mt-3 min-h-[36px] flex items-center justify-center w-full">
                             CALL US
@@ -132,19 +119,19 @@ function ContactOptions() {
                 <motion.div
                     {...getSectionAnim({ direction: "up", delay: 0.2 })}
                     className="
-                    bg-white/30 p-5 md:p-6 rounded-lg shadow text-center 
-                    flex flex-col items-center 
-                    min-h-[210px] md:min-h-[250px]
+                    bg-white/30 p-5 rounded-lg shadow text-center 
+                    w-[100%]
+                    h-[250px]
                     "
                 >
                     <Image
                         src="/5-contact/icon 2.png"
                         alt="Email icon"
-                        width={56}
+                        width={46}
                         height={36}
                         className="mx-auto mb-3"
                     />
-                    <div className="flex-1 w-full flex flex-col items-center md:absolute md:bottom-10">
+                    <div className="">
                         <h3 className="text-2xl md:text-3xl font-bold mb-2 mt-3 min-h-[36px] flex items-center justify-center w-full">
                             EMAIL US
                         </h3>
@@ -158,19 +145,19 @@ function ContactOptions() {
                 <motion.div
                     {...getSectionAnim({ direction: "up", delay: 0.3 })}
                     className="
-                        bg-white/30 p-5 md:p-6 rounded-lg shadow text-center 
-                        flex flex-col items-center 
-                        min-h-[210px] md:min-h-[225px]
+                        bg-white/30 p-5 rounded-lg shadow text-center 
+                    w-[100%]
+                    h-[250px]
                         "
                 >
                     <Image
                         src="/5-contact/icon 3.png"
                         alt="Location icon"
-                        width={56}
+                        width={46}
                         height={36}
                         className="mx-auto mb-3"
                     />
-                    <div className="flex-1 w-full flex flex-col items-center md:absolute md:bottom-5 md:mt-0">
+                    <div className="">
                         <h3 className="text-2xl md:text-3xl font-bold mb-2 mt-3 min-h-[36px] flex items-center justify-center w-full">
                             VISIT US
                         </h3>
@@ -201,7 +188,8 @@ function MessageForm() {
     };
 
     return (
-        <section className="relative w-full text-center  px-4 md:px-6 flex flex-col md:flex-row items-start gap-12">
+        <section className="relative
+            w-[100%] ">
             {/* Background squiggle decoration - only on md+ */}
             <div className='hidden md:block absolute h-full w-350 bottom-35 right-25'>
                 <img
@@ -211,74 +199,77 @@ function MessageForm() {
                 />
             </div>
 
+            <div className='flex flex-col md:flex-row items-center justify-center text-center md:text-start w-[90%] mx-[5%] md:w-[80%] md:mx-[10%]'>
+                {/* Left text section */}
+                <motion.div {...getSectionAnim({ direction: "", delay: 0.1 })} className="w-[100%] relative bottom-10 md:bottom-25">
+                    <h2
+                        className="text-6xl md:text-8xl font-[Anton] mb-4 tracking-wide"
+                        style={{ lineHeight: '1.4' }}
+                    >
+                        SEND US <br /> A MESSAGE
+                    </h2>
+                    <p className="text-xl md:text-3xl mt-6">
+                        Use the form to get in touch.
+                    </p>
+                </motion.div>
 
-            {/* Left text section */}
-            <motion.div {...getSectionAnim({ direction: "", delay: 0.1 })} className="flex-1 w-full z-10 text-center md:mt-15 md:text-left md:relative md:bottom-0 md:ml-35">
-                <h2
-                    className="text-6xl md:ml-9 md:text-8xl md:text-start text-center font-[Anton] mb-4 tracking-wide"
-                    style={{ lineHeight: '1.4' }}
+                {/* Contact form */}
+                <motion.form
+                    {...getSectionAnim({ direction: "left", delay: 0.2 })}
+                    onSubmit={handleSubmit}
+                    className="w-[90%] mx-[5%] md:w-[100%] space-y-10"
                 >
-                    SEND US <br /> A MESSAGE
-                </h2>
-                <p className="text-xl md:ml-10 md:text-3xl mt-6">
-                    Use the form to get in touch.
-                </p>
-            </motion.div>
+                    <div className="text-center md:text-left">
+                        <label className="block mb-1 text-base text-xl font-bold" htmlFor="name">
+                            Name
+                        </label>
+                        <input
+                            name="name"
+                            type="text"
+                            value={form.name}
+                            onChange={handleChange}
+                            placeholder='Enter your name and surname'
+                            className="w-full p-3 border border-gray-300 rounded-xl"
+                        />
+                    </div>
 
-            {/* Contact form */}
-            <motion.form
-                {...getSectionAnim({ direction: "left", delay: 0.2 })}
-                onSubmit={handleSubmit}
-                className="flex-1 w-full sm:w-75 space-y-6 sm:space-y-8 sm:mr-45 sm:mt-15 z-10"
-            >
-                <div className="text-left">
-                    <label className="block mb-1 text-base text-xl font-bold" htmlFor="name">
-                        Name
-                    </label>
-                    <input
-                        name="name"
-                        type="text"
-                        value={form.name}
-                        onChange={handleChange}
-                        placeholder='Enter your name and surname'
-                        className="w-full p-3 border border-gray-300 rounded-xl"
-                    />
-                </div>
+                    <div className="text-center md:text-left">
+                        <label className="block mb-1 text-base text-xl font-bold" htmlFor="email">
+                            Mail
+                        </label>
+                        <input
+                            name="email"
+                            type="email"
+                            value={form.email}
+                            onChange={handleChange}
+                            placeholder='sample@gmail.com'
+                            className="w-full p-3 border border-gray-300 rounded-xl"
+                        />
+                    </div>
 
-                <div className="text-left">
-                    <label className="block mb-1 text-base text-xl font-bold" htmlFor="email">
-                        Mail
-                    </label>
-                    <input
-                        name="email"
-                        type="email"
-                        value={form.email}
-                        onChange={handleChange}
-                        placeholder='sample@gmail.com'
-                        className="w-full p-3 border border-gray-300 rounded-xl"
-                    />
-                </div>
+                    <div className="text-center md:text-left">
+                        <label className="block mb-1 text-base text-xl font-bold" htmlFor="message">
+                            Message
+                        </label>
+                        <textarea
+                            name="message"
+                            value={form.message}
+                            onChange={handleChange}
+                            placeholder='Write your message here...'
+                            className="w-full p-3 border border-gray-300 rounded-xl h-32"
+                        />
+                    </div>
 
-                <div className="text-left">
-                    <label className="block mb-1 text-base text-xl font-bold" htmlFor="message">
-                        Message
-                    </label>
-                    <textarea
-                        name="message"
-                        value={form.message}
-                        onChange={handleChange}
-                        placeholder='Write your message here...'
-                        className="w-full p-3 border border-gray-300 rounded-xl h-32"
-                    />
-                </div>
+                    <button
+                        type="submit"
+                        className="w-full text-xl bg-[var(--button-bg)] hover:bg-[var(--button-bg-hover)] text-[var(--button-fg)] py-3 px-6 rounded hover:bg-red-600 transition"
+                    >
+                        SEND MESSAGE
+                    </button>
+                </motion.form>
+            </div>
 
-                <button
-                    type="submit"
-                    className="w-full text-xl bg-[var(--button-bg)] hover:bg-[var(--button-bg-hover)] text-[var(--button-fg)] py-3 px-6 rounded hover:bg-red-600 transition"
-                >
-                    SEND MESSAGE
-                </button>
-            </motion.form>
+
         </section>
 
     );
@@ -287,7 +278,8 @@ function MessageForm() {
 
 function ContactMap() {
     return (
-        <section className="relative w-full px-4 md:px-0 md:h-200  grid grid-cols-1 items-start gap-12 overflow-hidden">
+        <section className="relative
+            w-[100%] ">
             {/* Background image - hidden on mobile */}
             <div className='hidden md:block md:absolute md:w-full md:top-5 md:left-65'>
                 <img
@@ -299,34 +291,34 @@ function ContactMap() {
 
 
             {/* Header */}
-            <motion.div {...getSectionAnim({ direction: "", delay: 0.1 })} className="text-center mt-6 sm:mt-12 z-10">
-                <h2 className="text-7xl md:text-8xl font-[Anton] mb-5">CONTACT US</h2>
+            <motion.div {...getSectionAnim({ direction: "", delay: 0.1 })} className="text-center w-[90%] mx-[5%] md:w-[80%] md:mx-[10%] my-12 sm:mt-12 z-10">
+                <h2 className="text-6xl md:text-8xl font-[Anton] mb-5">CONTACT US</h2>
                 <p className="text-2xl md:text-3xl">Feel free to get in touch with us.</p>
             </motion.div>
 
             {/* Contact Info + Map */}
-            <div className="flex flex-col md:flex-row items-start gap-10 mt-0 z-10">
+            <div className="flex flex-col md:flex-row space-y-5 md:space-y-0 items-center justify-center w-[90%] mx-[5%] md:w-[80%] md:mx-[10%]">
                 {/* Left Column: Info */}
-                <div className="w-full md:w-200 space-y-15 md:ml-35 md:relative">
-                    <motion.div {...getSectionAnim({ direction: "right", delay: 0.2 })} className="block text-center md:w[200px] md:flex md:items-start md:gap-4">
-                        <Image src="/5-contact/icon 1.png" className='ml-35 md:ml-0' alt="Phone" width={60} height={40} />
-                        <div className="text-xl sm:text-2xl sm:absolute sm:right-0 sm:w-full">
+                <div className="w-[100%] space-y-15 md:relative">
+                    <motion.div {...getSectionAnim({ direction: "right", delay: 0.2 })} className="block w-[100%] text-center md:text-start md:flex md:items-start md:gap-4">
+                        <Image src="/5-contact/icon 1.png" className=' md:mx-0 mx-[42.5%] w-[15%] md:w-[10%] md:ml-0' alt="Phone" width={60} height={40} />
+                        <div className="text-xl md:text-2xl md:relative md:right">
                             <strong className="text-2xl sm:text-3xl">PHONE</strong><br />
                             (123) 456-7890
                         </div>
                     </motion.div>
 
-                    <motion.div {...getSectionAnim({ direction: "right", delay: 0.3 })} className="block text-center md:w[200px] md:flex md:items-start md:gap-4">
-                        <Image src="/5-contact/icon 2.png" className='ml-35 md:ml-0' alt="Email" width={60} height={40} />
-                        <div className="text-xl sm:text-2xl sm:absolute sm:right-0 sm:w-full">
+                    <motion.div {...getSectionAnim({ direction: "right", delay: 0.3 })} className="block w-[100%] text-center md:text-start md:flex md:items-start md:gap-4">
+                        <Image src="/5-contact/icon 2.png" className=' md:mx-0 mx-[42.5%] w-[15%] md:w-[10%] md:ml-0' alt="Email" width={60} height={40} />
+                        <div className="text-xl sm:text-2xl ">
                             <strong className="text-2xl sm:text-3xl">EMAIL</strong><br />
                             info@example.com
                         </div>
                     </motion.div>
 
-                    <motion.div {...getSectionAnim({ direction: "right", delay: 0.4 })} className="block text-center md:w[200px] md:flex md:items-start md:gap-4">
-                        <Image src="/5-contact/icon 3.png" className='ml-35 md:ml-0' alt="Location" width={60} height={40} />
-                        <div className="text-xl sm:text-2xl sm:absolute sm:right-0 sm:w-full">
+                    <motion.div {...getSectionAnim({ direction: "right", delay: 0.4 })} className="block w-[100%] text-center md:text-start md:flex md:items-start md:gap-4">
+                        <Image src="/5-contact/icon 3.png" className=' md:mx-0 mx-[42.5%] w-[15%] md:w-[10%] md:ml-0' alt="Location" width={60} height={40} />
+                        <div className="text-xl sm:text-2xl">
                             <strong className="text-2xl sm:text-3xl">VISIT</strong><br />
                             1234 Burger Lane<br />
                             City, State 12345
@@ -335,7 +327,7 @@ function ContactMap() {
                 </div>
 
                 {/* Right Column: Map */}
-                <motion.div {...getSectionAnim({ direction: "", delay: 0.5 })} className="w-full md:w-full h-64 h-100 md:h-[350px] mr-35 rounded overflow-hidden">
+                <motion.div {...getSectionAnim({ direction: "", delay: 0.5 })} className="w-[100%] h-100 rounded">
                     <iframe
                         src="https://www.google.com/maps?q=1234+Burger+Lane&output=embed"
                         className="w-full h-full rounded shadow"

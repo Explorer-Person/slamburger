@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function AboutUs() {
     return (
-        <main className="flex flex-col space-y-12 md:space-y-35 items-center w-full font-[var(--font-body)]">
+        <main className="flex flex-col items-center md:w-[100%] md:overflow-hidden pt-25 md:pt-45 md:relative space-y-20 md:min-h-screen md:space-y-25 font-[var(--font-body)]">
             <AboutSlamburger />
             <OurStory />
             <WhatWeStandFor />
@@ -20,31 +20,33 @@ export default function AboutUs() {
 
 function AboutSlamburger() {
     return (
-        <section id="about-slamburger" className="w-full pt-25 mx-auto md:px-8">
-            <div className="relative overflow-hidden md:pt-30 md:px-16">
+        <section id="about-slamburger" className="relative w-[100%]">
+            <div className="">
                 {/* Background image - preserved */}
                 <img
                     src="/4-about/1-about/arkaplan.png"
                     alt="Decorative background"
-                    className="hidden md:block md:absolute md:left-25 md:bottom-0 md:w-[700px] md:w-[1200px] pointer-events-none"
+                    className="hidden md:block md:absolute w-[80%] mx-[10%] bottom-[-150px]"
                 />
 
-                <motion.div {...getSectionAnim({ direction: "", delay: 0.1 })} className="relative z-10 max-w-[1400px] mx-auto flex flex-col-reverse md:flex-row md:w-[%50] md:mx-25 items-center justify-between gap-16 text-center md:text-left">
+                <motion.div {...getSectionAnim({ direction: "", delay: 0.1 })} className="md:w-[80%] md:mx-[10%] w-[90%] mx-[5%] space-y-10 md:space-y-0 z-10 md:flex items-center justify-center gap-16 text-center text-left">
                     {/* Left: Text content */}
-                    <div className="max-w-2xl mb-15 md:mb-50 md:ml-15">
-                        <h2 className="text-6xl md:text-8xl lg:tracking-wide font-[Anton] text-black tracking-wide leading-tight mb-8">
+                    <div className="text-center md:text-start">
+                        <h2 className="text-5xl md:text-8xl md:tracking-wide font-[Anton] text-black leading-tight mb-8">
                             ABOUT <span className="block">SLAMBURGER</span>
                         </h2>
-                        <p className="text-xl md:text-2xl text-gray-800 mb-8">
+                        <p className="text-lg md:text-2xl text-gray-800 mb-8">
                             Bold flavors. Real ingredients. Made to slam.
                         </p>
-                        <button className="bg-[var(--button-bg)] hover:bg-[var(--button-bg-hover)] text-[var(--button-fg)] font-semibold text-xl px-10 py-5 rounded-xl transition">
+                        <button className="bg-[var(--button-bg)] hover:bg-[var(--button-bg-hover)] text-[var(--button-fg)] font-semibold text-lg px-10 py-5 rounded-xl transition">
                             READ OUR STORY
                         </button>
                     </div>
 
                     {/* Right: Chef Image */}
-                    <div className="w-full md:block md:max-w-[500px] md:relative md:bottom-15">
+                    <div className="
+                    z-10
+                    ">
                         <Image
                             src="/4-about/1-about/1-about_1.png"
                             alt="Chef holding burger"
@@ -63,19 +65,19 @@ function AboutSlamburger() {
 
 function OurStory() {
     return (
-        <section id="our-story" className="w-full px-2 md:px-8">
-            <div className="relative overflow-hidden md:py-20 px-2 md:px-16">
+        <section id="our-story" className="relative w-[100%]">
+            <div className="relative">
                 {/* Background image - preserved */}
                 <img
                     src="/4-about/2-story/hikaye_arkaplan.png"
                     alt="Decorative background"
-                    className="hidden md:block md:absolute md:inset-0 md:pointer-events-none"
+                    className="hidden md:block absolute w-[90%] top-[-100px] "
 
                 />
 
-                <div className="relative z-10 max-w-[1200px] mx-auto flex flex-col-reverse md:flex-row md:w-[%70] md:ml-25 items-center justify-between gap-16 text-center md:text-left md:mt-20">
+                <div className="md:w-[80%] md:mx-[10%] w-[90%] mx-[5%] z-10 relative flex flex-col md:flex-row items-center justify-center gap-16 text-center md:text-left">
                     {/* Text content */}
-                    <motion.div {...getSectionAnim({ direction: "left", delay: 0.1 })} className="w-90 md:w-125">
+                    <motion.div {...getSectionAnim({ direction: "left", delay: 0.1 })} className="">
                         <h2 className="text-6xl md:text-8xl tracking-wide font-[Anton] text-black leading-tight mb-8">
                             OUR <span className="block">STORY</span>
                         </h2>
@@ -86,7 +88,7 @@ function OurStory() {
                     </motion.div>
 
                     {/* Illustration */}
-                    <motion.div {...getSectionAnim({ direction: "right", delay: 0.1 })} className="w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[600px]">
+                    <motion.div {...getSectionAnim({ direction: "right", delay: 0.1 })} className="w-[100%]">
                         <Image
                             src="/4-about/2-story/2-story_1.png"
                             alt="Kitchen scene with chef"
@@ -108,26 +110,25 @@ function WhatWeStandFor() {
     return (
         <section
             id="what-we-stand-for"
-            className="relative w-full px-0 md:pt-5 left-1/2 right-1/2  "
-            style={{ transform: 'translateX(-50%)' }}
+            className="relative w-[100%]"
         >
-            <div className="relative overflow-hidden px-2 pb-5 sm:pb-45 sm:px-8">
+            <div className="">
                 {/* Background shapes (untouched) */}
                 <img
                     src="/4-about/3-features/3-features_bg_shapes.png"
                     alt="Background shapes"
-                    className="hidden md:block md:absolute md:bottom-0 md:w-250"
+                    className="hidden md:block absolute w-[90%] mx-[5%] bottom-[-250px]"
                 />
 
-                <div className="relative z-10 max-w-[1400px] mx-auto text-center">
+                <div className="relative text-center w-[90%] mx-[5%] md:w-[80%] md:mx-[10%]">
                     <motion.h2 {...getSectionAnim({ direction: "", delay: 0.1 })} className="text-6xl md:text-8xl font-[Anton] mb-16 text-black">
                         WHAT WE STAND FOR
                     </motion.h2>
 
                     {/* Grid of icons and texts */}
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-16 text-center items-stretch">
+                    <div className="flex flex-col md:flex-row items-center justify-center text-center gap-5">
                         {/* Block 1 */}
-                        <motion.div {...getSectionAnim({ direction: "up", delay: 0.2 })} className="relative flex flex-col items-center text-center h-[225px] md:h-[280px] space-y-6 shadow-md p-10 rounded-[3rem] bg-white/20">
+                        <motion.div {...getSectionAnim({ direction: "up", delay: 0.2 })} className="relative shadow-md p-10 rounded-[3rem] bg-white/20">
                             <Image
                                 src="/4-about/3-features/3-features_icon_1.png"
                                 alt="Quality icon"
@@ -135,7 +136,7 @@ function WhatWeStandFor() {
                                 height={90}
                                 className="mx-auto w-[68px] md:w-[78px]"
                             />
-                            <div className="absolute bottom-0 left-0 w-full px-6 pb-6">
+                            <div className="">
                                 <h3 className="text-2xl md:text-4xl md:mb-5 font-bold">Quality</h3>
                                 <p className="text-gray-800 text-base md:text-xl font-medium">
                                     We are committed to providing top-notch food and service.
@@ -152,7 +153,7 @@ function WhatWeStandFor() {
                                 height={120}
                                 className="mx-auto w-[68px] md:w-[78px]"
                             />
-                            <div className="absolute bottom-0 left-0 w-full px-6 pb-6">
+                            <div className="">
                                 <h3 className="text-2xl sm:text-4xl lg:mb-5 font-bold">Freshness</h3>
                                 <p className="text-gray-800 text-base md:text-xl font-medium">
                                     We use only the freshest, locally sourced ingredients.
@@ -169,7 +170,7 @@ function WhatWeStandFor() {
                                 height={120}
                                 className="mx-auto w-[68px] sm:w-[88px] lg:w-[120px]"
                             />
-                            <div className="absolute bottom-0 left-0 w-full px-6 pb-6">
+                            <div className="">
                                 <h3 className="text-2xl md:text-4xl lg:mb-5 font-bold">Community</h3>
                                 <p className="text-gray-800 text-base md:text-xl font-medium">
                                     We strive to make a positive impact in our neighborhood.
@@ -187,9 +188,9 @@ function WhatWeStandFor() {
 
 function OurValues() {
     return (
-        <section id="our-values" className="w-full px-2 md:px-8 ">
-            <div className="relative overflow-hidden px-2 md:px-12">
-                <div className="relative z-10 max-w-[1200px] mx-auto text-center">
+        <section id="our-values" className="relative w-[100%]">
+            <div>
+                <div className="relative text-center w-[90%] mx-[5%] md:w-[80%] md:mx-[10%]">
                     <motion.h2
                         {...getSectionAnim({ direction: "", delay: 0.1 })}
                         className="text-6xl md:text-8xl font-[Anton] mb-10 text-black"
@@ -254,7 +255,7 @@ function OurValues() {
                             </motion.div>
                         </div>
 
-                        <div className="w-full mt-6 grid md:grid-cols-2 gap-6">
+                        <div className="mt-6 grid md:grid-cols-2 gap-6">
                             {/* PASSION Card */}
                             <motion.div
                                 {...getSectionAnim({ direction: "up", delay: 0.5 })}
@@ -306,10 +307,9 @@ function OurTeam() {
     return (
         <section
             id="our-team"
-            className="relative w-full min-h-[500px] px-0 left-1/2 right-1/2"
-            style={{ transform: "translateX(-50%)" }}
+            className="relative w-[100%]"
         >
-            <div className="relative overflow-hidden px-2 md:px-6">
+            <div>
                 {/* Decorative background */}
                 <img
                     src="/4-about/5-team/5-team_bg_shapes.png"
@@ -318,7 +318,7 @@ function OurTeam() {
                 />
 
                 {/* EXPANDED CONTAINER */}
-                <div className="relative z-10 max-w-[1200px] mx-auto mt-12 text-center">
+                <div className="relative text-center w-[90%] mx-[5%] md:w-[80%] md:mx-[10%]">
                     <motion.h2
                         {...getSectionAnim({ direction: "", delay: 0.1 })}
                         className="text-6xl md:text-8xl tracking-wide font-[Anton] mb-10 text-black"
@@ -326,13 +326,13 @@ function OurTeam() {
                         MEET THE TEAM
                     </motion.h2>
 
-                    <div className="flex flex-col gap-14 max-w-3xl mx-auto">
+                    <div className="flex flex-col gap-25">
                         {/* Row 1 */}
-                        <div className="flex flex-col md:flex-row gap-8 justify-center items-center md:items-end">
+                        <div className="flex flex-col md:flex-row justify-center items-center gap-25 md:gap-0">
                             {/* Melis */}
                             <motion.div
                                 {...getSectionAnim({ direction: "", delay: 0.2 })}
-                                className="flex flex-col items-center flex-1 text-center"
+                                className="flex flex-col text-center w-[100%]"
                             >
                                 <Image
                                     src="/4-about/5-team/5-team_1.png"
@@ -351,7 +351,7 @@ function OurTeam() {
                             {/* Kyle */}
                             <motion.div
                                 {...getSectionAnim({ direction: "", delay: 0.3 })}
-                                className="flex flex-col items-center flex-1 text-center"
+                                className="flex flex-col text-center w-[100%]"
                             >
                                 <Image
                                     src="/4-about/5-team/5-team_2.png"
@@ -370,11 +370,11 @@ function OurTeam() {
                         </div>
 
                         {/* Row 2 */}
-                        <div className="flex flex-col md:flex-row gap-8 justify-center items-center md:items-end">
+                        <div className="flex flex-col md:flex-row justify-center items-center gap-25 md:gap-0">
                             {/* Omar */}
                             <motion.div
                                 {...getSectionAnim({ direction: "", delay: 0.4 })}
-                                className="flex flex-col items-center flex-1 text-center"
+                                className="flex flex-col text-center w-[100%]"
                             >
                                 <Image
                                     src="/4-about/5-team/5-team_3.png"
@@ -393,7 +393,7 @@ function OurTeam() {
                             {/* Ava */}
                             <motion.div
                                 {...getSectionAnim({ direction: "", delay: 0.5 })}
-                                className="flex flex-col items-center flex-1 text-center"
+                                className="flex flex-col text-center w-[100%]"
                             >
                                 <Image
                                     src="/4-about/5-team/5-team_4.png"
@@ -421,16 +421,16 @@ function OurTeam() {
 
 function VisitUs() {
     return (
-        <section id='visit-us' className="relative overflow-hidden w-full h-150 md:h-[500px] mx-auto px-4 ">
-            <div className="relative overflow-hidden px-4 md:px-10 md:py-25 h-[500px]">
+        <section id='visit-us' className="relative w-[100%]">
+            <div className="">
                 {/* Decorative background */}
                 <img
                     src="/4-about/6-visit/bg_shapes.png"
                     alt="Decorative background"
-                    className="hidden md:block absolute w-[1100px] top-0 mb-25 left-70 pointer-events-none"
+                    className="hidden md:block absolute top-[6px] right-25 w-300 pointer-events-none"
                 />
 
-                <div className="relative z-10 max-w-5xl mx-auto flex flex-col-reverse md:flex-row md:bottom-10 items-center justify-between gap-8">
+                <div className="relative flex flex-col md:flex-row space-y-5 md:space-y-0 items-center justify-center w-[90%] mx-[5%] md:w-[80%] md:mx-[10%]">
                     {/* Left: Text */}
                     <motion.div
                         {...getSectionAnim({ direction: "", delay: 0.1 })}
@@ -439,7 +439,7 @@ function VisitUs() {
                         <h2 className="text-6xl md:text-8xl tracking-wide font-[Anton] text-black mb-4">
                             VISIT US
                         </h2>
-                        <p className="text-2xl text-gray-800 mb-6">
+                        <p className="text-2xl text-gray-800 md:w-[75%] mb-6">
                             Experience our delicious handcrafted burgers and welcoming atmosphere in person.
                         </p>
                         <button className="bg-[var(--button-bg)] hover:bg-[var(--button-bg-hover)] text-[var(--button-fg)] font-semibold px-5 py-2.5 rounded-lg text-lg transition">
@@ -450,7 +450,7 @@ function VisitUs() {
                     {/* Right: Burger image */}
                     <motion.div
                         {...getSectionAnim({ direction: "left", delay: 0.2 })}
-                        className="w-full max-w-xs"
+                        className=""
                     >
                         <Image
                             src="/4-about/6-visit/burger.png"

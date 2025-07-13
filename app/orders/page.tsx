@@ -20,6 +20,7 @@ type OrderItem = {
 
 export default function OrdersPage() {
     const [items, setItems] = useState<OrderItem[]>([]);
+    const [hiddenStatus, setHiddenStatus] = useState(false)
 
     useEffect(() => {
         // Load basket from localStorage (if you use a different key, update here)
@@ -66,7 +67,7 @@ export default function OrdersPage() {
                     {items.map((item, idx) => (
                         <div
                             key={item.name + idx}
-                            className="flex items-center gap-4 md:gap-8 group"
+                            className={`${hiddenStatus ? "" : idx > 1 ? "hidden" : ""} flex items-center gap-4 md:gap-8 group`}
                         >
                             <div className="w-16 h-16 md:w-24 md:h-24 flex-shrink-0 relative">
                                 <Image
@@ -91,6 +92,26 @@ export default function OrdersPage() {
                             </div>
                         </div>
                     ))}
+                </div>
+                <div className="w-[100%] text-center">
+                    <button
+                        className="
+                        md:hidden
+                        my-8
+                        px-5 py-2
+                        rounded-full
+                        bg-black hover:bg-[var(--button-bg-hover)] text-[var(--button-fg)] 
+                        font-bold
+                        shadow-lg
+                        hover:from-red-500 hover:to-yellow-300 hover:scale-105 hover:text-white
+                        active:scale-95
+                        transition-all duration-200
+                        text-base tracking-wide
+                        outline-none
+                        mx-auto block
+                        "
+                        onClick={() => { setHiddenStatus(hiddenStatus ? false : true) }}
+                    >{hiddenStatus ? "Hide" : "Show More..."}</button>
                 </div>
                 <div className="flex justify-between items-center font-bold text-xl md:text-2xl border-t pt-5 border-black/10 mb-6 md:mb-8">
                     <span>Total</span>
