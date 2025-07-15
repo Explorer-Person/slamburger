@@ -25,7 +25,7 @@ export default function RootLayout({
         <Header />
         <BasketWidget />
         {/* Main content area */}
-        <main className="relative w-screen overflow-x-hidden">
+        <main className="relative w-screen">
           <AlertProvider>
             <ClientLayoutBackground>
               {children}

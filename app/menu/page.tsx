@@ -24,16 +24,16 @@ function SlamBurgerMenu() {
     };
 
     return (
-        <section className="relative w-full">
-            <div className="w-full md:w-[80%] md:mx-[10%] h-full mx-auto">
+        <section style={{height:"2000px"}} className="w-full">
+            <div className="w-full md:w-[80%] md:mx-[10%] mx-auto">
                 {/* Header */}
                 <motion.h1 {...getSectionAnim({ direction: "", delay: 0.1 })} className="text-4xl md:text-7xl tracking-wide font-[Anton] mb-2">SLAMBURGER</motion.h1>
                 <motion.h2 {...getSectionAnim({ direction: "", delay: 0.2 })} className="text-6xl md:text-8xl tracking-widest font-[Anton] mb-15">MENU</motion.h2>
             </div>
             {/* Category Navigation - STICKY */}
             <motion.div
-                {...getSectionAnim({ direction: "up", delay: 0.1 })}
-                className="md:fixed z-30 bg-[var(--layout-bg)]/70 w-full md:w-[80%] md:mx-[10%] mx-auto flex flex-wrap gap-4 md:gap-6 text-base md:text-lg font-semibold mb-10 border-b border-gray-300 pb-2"
+                {...getSectionAnim({ direction: "", delay: 0.1 })}
+                className="sticky top-0 z-30 bg-[var(--layout-bg)]/70 w-full md:w-[80%] md:mx-[10%] mx-auto flex flex-wrap gap-4 md:gap-6 text-base md:text-lg font-semibold mb-10 border-b border-gray-300 pb-2"
             >
                 {['burgers', 'wings', 'sides'].map((category) => (
                     <button
