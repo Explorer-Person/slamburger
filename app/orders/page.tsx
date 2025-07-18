@@ -33,7 +33,7 @@ export default function OrdersPage() {
     const total = items.reduce(
         (sum, item) =>
             sum +
-            (Number(item.price.replace("$", "")) * (item.quantity || 1)),
+            ((Number(item.price.replace("$", "").replace(",", ".")) + (item.options?.makeMeal ? 2.50 : 0)) * (item.quantity || 1)),
         0
     );
 
@@ -88,14 +88,16 @@ export default function OrdersPage() {
                                 </span>
                             </div>
                             <div className="font-bold text-xl md:text-2xl text-black ml-auto">
-                                {(Number(item.price.replace("$", "")) * (item.quantity || 1)).toFixed(2)}
+                                {((Number(item.price.replace("$", "")) + (item.options?.makeMeal ? 2.50 : 0)) * (item.quantity || 1)).toFixed(2)}
                             </div>
                         </div>
                     ))}
                 </div>
                 <div className="w-[100%] text-center">
+
                     <button
-                        className="
+                        className={`
+                        ${hiddenStatus ? "" : items.length > 2 ? "" : "hidden"}
                         md:hidden
                         my-8
                         px-5 py-2
@@ -109,7 +111,7 @@ export default function OrdersPage() {
                         text-base tracking-wide
                         outline-none
                         mx-auto block
-                        "
+                        `}
                         onClick={() => { setHiddenStatus(hiddenStatus ? false : true) }}
                     >{hiddenStatus ? "Hide" : "Show More..."}</button>
                 </div>

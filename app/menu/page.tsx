@@ -24,7 +24,7 @@ function SlamBurgerMenu() {
     };
 
     return (
-        <section style={{height:"2000px"}} className="w-full">
+        <section className="w-full">
             <div className="w-full md:w-[80%] md:mx-[10%] mx-auto">
                 {/* Header */}
                 <motion.h1 {...getSectionAnim({ direction: "", delay: 0.1 })} className="text-4xl md:text-7xl tracking-wide font-[Anton] mb-2">SLAMBURGER</motion.h1>
