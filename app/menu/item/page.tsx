@@ -30,6 +30,8 @@ function Item() {
             const name = itemName
                 .replace(/-/g, ' ')
                 .replace(/\b\w/g, char => char.toUpperCase());
+            
+            console.log(name, itemName)
 
             // Use find to get a single item or undefined
             const found = menuItems.find((item) => item.name === name);

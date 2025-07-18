@@ -14,8 +14,8 @@ export default function LongPressDesc({ desc, showRest }: { desc: string, showRe
     return (
         <p className="overflow-hidden md:block text-sm md:text-2xl text-gray-700">
             {detail}
-            {rest && '...'}
-            <span className={`${showRest ? "block" : "hidden"} md:hidden text-xs text-gray-500`}>
+            { rest && showRest ? '' : '...'}
+            <span className={`${showRest ? "block" : "hidden"} md:hidden text-sm`}>
                 {rest}
             </span>
         </p>

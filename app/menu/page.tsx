@@ -118,5 +118,6 @@ function MenuElement ({ item }: { item: MenuItem }){
 function chooseItem(item: { name: string; desc: string; img: string; price: string; imgW: number; imgH: number }) {
     // This function can be used to handle item selection if needed
     console.log(`Selected item: ${item.name}`);
-    window.location.href = `/menu/item?name=${item.name.toLowerCase().replace(/\s+/g, '-')}`; // Redirect to item page
+    const encodedName = encodeURIComponent(item.name.toLowerCase().replace(/\s+/g, '-'));
+    window.location.href = `/menu/item?name=${encodedName}`; // Redirect to item page
 }
